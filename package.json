@@ -4,12 +4,15 @@
 	"description": "A utility tool to simplify the process of adding co-authors to GitHub commits, streamlining collaboration directly from the command line.",
 	"main": "src/index.ts",
 	"scripts": {
-		"build": "tsup src/index.ts --format cjs,esm --dts --minify",
+		"build": "tsup",
 		"start": "node dist/index.js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/2-NOW/co-author-cli.git"
+	},
+	"bin": {
+		"co-author-cli": "./dist/index.js"
 	},
 	"keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
 	"author": "2-NOW <kj109888@gmail.com>",
