@@ -1,7 +1,7 @@
 async function main() {
 	const args = process.argv.slice(2);
 	if (args.length !== 2) {
-		console.log("Usage: npx co-author <github-user-name> <display-name>");
+		console.log("Usage: npx co-author <name> <github-user>");
 		process.exit(1);
 	}
 
