@@ -1,6 +1,6 @@
 {
 	"name": "co-author-cli",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A utility tool to simplify the process of adding co-authors to GitHub commits, streamlining collaboration directly from the command line.",
 	"main": "src/index.ts",
 	"scripts": {
