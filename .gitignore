@@ -4,3 +4,6 @@ node_modules/
 logs
 *.log
 .pnpm-debug.log*
+
+# Build files
+dist
