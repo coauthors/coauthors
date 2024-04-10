@@ -5,13 +5,11 @@ async function main() {
 		process.exit(1);
 	}
 
-	const [githubUserName, displayName] = args;
-	const response = await fetch(
-		`https://api.github.com/users/${githubUserName}`,
-	);
-	const githubUser = await response.json();
+	const [name, githubUser] = args;
+	const res = await fetch(`https://api.github.com/users/${githubUser}`);
+	const resUser = await res.json();
 	console.log(
-		`Co-authored-by: ${displayName} <${githubUser.id}+${githubUserName}@users.noreply.github.com>`,
+		`Co-authored-by: ${name} <${resUser.id}+${githubUser}@users.noreply.github.com>`,
 	);
 	process.exit(0);
 }
