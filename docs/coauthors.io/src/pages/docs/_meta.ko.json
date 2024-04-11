@@ -1,0 +1,16 @@
+{
+	"intro": "시작하기",
+	"--- Packages": {
+		"type": "separator",
+		"title": "패키지"
+	},
+	"core": "@coauthors/core",
+	"cli": "@coauthors/cli",
+	"precommit": "@coauthors/precommit",
+	"--- More": {
+		"type": "separator",
+		"title": "더보기"
+	},
+	"changelogs": "Changelogs",
+	"links": "관련 링크"
+}
