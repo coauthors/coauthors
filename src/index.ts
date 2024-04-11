@@ -1,9 +1,7 @@
 async function main() {
 	const args = process.argv.slice(2);
 	if (args.length < 1) {
-		console.log(
-			"Usage: npx co-author-cli <name:github-user> [<name:github-user>...]",
-		);
+		console.log("Usage: npx co-author-cli <github-user> <github-user(name)>");
 		process.exit(1);
 	}
 	const authors = await parseAuthors(args);
@@ -18,19 +16,26 @@ main().catch((error) => {
 
 async function parseAuthors(args: string[]) {
 	return args.map((arg) => {
-		const [name, user] = arg.split(":");
-		if (!user || !name) {
-			throw new Error(`Expected format "name:github-user", but got "${arg}"`);
+		const match = arg.match(/(?<user>\w+)(?:\((?<name>.+)\))?/);
+		if (!match || !match.groups || !match.groups.user) {
+			throw new Error(
+				`Invalid author: ${arg}. Expected format: github-user or github-user(name)`,
+			);
 		}
-		return { name, user };
+		return {
+			user: match.groups.user,
+			name: match.groups.name ?? undefined,
+		};
 	});
 }
 
-async function generateCoAuthors(authors: { name: string; user: string }[]) {
+async function generateCoAuthors(authors: { user: string; name: string }[]) {
 	const coAuthors = await Promise.all(
-		authors.map(async ({ name, user }) => {
+		authors.map(async ({ user, name }) => {
 			const resUser = await fetchGithubUser(user);
-			return `Co-authored-by: ${name} <${resUser.id}+${user}@users.noreply.github.com>`;
+			return `Co-authored-by: ${name ?? resUser.name} <${
+				resUser.id
+			}+${user}@users.noreply.github.com>`;
 		}),
 	);
 	return coAuthors.join("\n");
