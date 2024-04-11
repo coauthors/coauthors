@@ -5,7 +5,8 @@
 	"main": "src/index.ts",
 	"scripts": {
 		"build": "tsup",
-		"start": "node dist/index.js"
+		"start": "node dist/index.js",
+		"prepare": "husky"
 	},
 	"repository": {
 		"type": "git",
@@ -20,6 +21,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.6.4",
 		"@types/node": "^20.12.7",
+		"husky": "^9.0.11",
+		"nano-staged": "^0.8.0",
 		"tsup": "^8.0.2",
 		"typescript": "^5.4.5"
 	},

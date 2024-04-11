@@ -1,0 +1,3 @@
+{
+	"*.{ts,json,jsonc}": ["biome format", "biome lint"]
+}
