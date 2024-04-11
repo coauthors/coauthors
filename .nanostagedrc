@@ -1,3 +1,4 @@
 {
-	"*.{ts,json,jsonc}": ["biome format", "biome lint"]
+	"*.{ts,json,jsonc}": ["biome format", "biome lint"],
+	"*.ts": ["tsc --noEmit"]
 }
