@@ -5,11 +5,11 @@ async function main() {
 		process.exit(1);
 	}
 	const authors = await parseAuthors(args);
-	return generateCoAuthors(authors);	
+	return generateCoAuthors(authors);
 }
 
 main()
-	.then((coAuthors)=> {
+	.then((coAuthors) => {
 		console.log(coAuthors);
 	})
 	.catch((error) => {
