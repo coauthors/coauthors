@@ -5,14 +5,17 @@ async function main() {
 		process.exit(1);
 	}
 	const authors = await parseAuthors(args);
-	const coAuthors = await generateCoAuthors(authors);
-	console.log(coAuthors);
+	return await generateCoAuthors(authors);	
 }
 
-main().catch((error) => {
-	console.error(error.message);
-	process.exit(1);
-});
+main()
+	.then((coAuthors)=> {
+		console.log(coAuthors);
+	})
+	.catch((error) => {
+		console.error(error.message);
+		process.exit(1);
+	});
 
 async function parseAuthors(args: string[]) {
 	return args.map((arg) => {
