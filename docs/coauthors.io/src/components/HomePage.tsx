@@ -25,13 +25,16 @@ export const HomePage = ({
 					<p className="text-3xl">{description}</p>
 				</div>
 				<Link href="/docs/intro">
-					<button className="rounded-xl bg-gray-800 px-10 py-3 text-xl font-bold">
+					<button
+						type="button"
+						className="rounded-xl bg-gray-800 px-10 py-3 text-xl font-bold"
+					>
 						{buttonText}
 					</button>
 				</Link>
 			</div>
 
-			<div className="h-14"></div>
+			<div className="h-14" />
 			<div className="flex flex-col items-start justify-between gap-8 md:flex-row">
 				{items.map(({ title, desc }) => (
 					<div
