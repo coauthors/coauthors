@@ -6,7 +6,8 @@
 	"scripts": {
 		"build": "tsup",
 		"start": "node dist/index.js",
-		"prepare": "husky"
+		"prepare": "husky",
+		"preinstall": "corepack enable"
 	},
 	"repository": {
 		"type": "git",
@@ -15,6 +16,7 @@
 	"bin": {
 		"coauthors-cli": "./dist/index.js"
 	},
+	"packageManager": "pnpm@8.15.2",
 	"keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
 	"author": "2-NOW <kj109888@gmail.com>",
 	"license": "ISC",
