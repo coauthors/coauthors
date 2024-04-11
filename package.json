@@ -1,6 +1,6 @@
 {
 	"name": "coauthors-cli",
-	"version": "1.0.0",
+	"version": "1.0.01",
 	"description": "A utility tool to simplify the process of adding co-authors to GitHub commits, streamlining collaboration directly from the command line.",
 	"main": "src/index.ts",
 	"scripts": {
@@ -12,7 +12,7 @@
 		"url": "git+git@github.com:coauthors/cli.git"
 	},
 	"bin": {
-		"coauthor-cli": "./dist/index.js"
+		"coauthors-cli": "./dist/index.js"
 	},
 	"keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
 	"author": "2-NOW <kj109888@gmail.com>",
