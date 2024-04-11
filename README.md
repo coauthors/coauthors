@@ -1,1 +1,1 @@
-# co-author-cli
+# coauthors
