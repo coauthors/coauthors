@@ -5,7 +5,7 @@ async function main() {
 		process.exit(1);
 	}
 	const authors = await parseAuthors(args);
-	return await generateCoAuthors(authors);	
+	return generateCoAuthors(authors);	
 }
 
 main()
