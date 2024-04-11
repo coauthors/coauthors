@@ -16,16 +16,8 @@ main().catch((error) => {
 
 async function parseAuthors(args: string[]) {
 	return args.map((arg) => {
-		const match = arg.match(/(?<user>\w+)(?:\((?<name>.+)\))?/);
-		if (!match || !match.groups || !match.groups.user) {
-			throw new Error(
-				`Invalid author: ${arg}. Expected format: github-user or github-user(name)`,
-			);
-		}
-		return {
-			user: match.groups.user,
-			name: match.groups.name ?? undefined,
-		};
+		const [user, name] = arg.split(/\(([^)]+)\)/);
+		return { user, name };
 	});
 }
 
