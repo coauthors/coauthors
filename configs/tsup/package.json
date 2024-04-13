@@ -23,7 +23,6 @@
   "scripts": {
     "build": "tsup",
     "ci:attw": "attw --pack",
-    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:publint": "publint --strict",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
