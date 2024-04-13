@@ -30,7 +30,7 @@
     },
     "./package.json": "./package.json"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": ["dist", "src"],
@@ -40,7 +40,10 @@
     "ci:publint": "publint --strict",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
-    "prepack": "pnpm build"
+    "dev": "tsup --watch",
+    "prepack": "pnpm build",
+    "test": "vitest run --coverage --typecheck",
+    "test:watch": "vitest --ui --coverage --typecheck"
   },
   "dependencies": {
     "zod": "^3.22.4"
