@@ -1,48 +1,45 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"pipeline": {
-		"build": {
-			"dependsOn": ["^build"],
-			"outputs": ["dist/**", ".next/**"]
-		},
-		"ci:attw": {
-			"dependsOn": ["prepack"]
-		},
-		"ci:eslint": {
-			"dependsOn": ["prepack"]
-		},
-		"ci:publint": {
-			"dependsOn": ["prepack"]
-		},
-		"ci:type": {
-			"dependsOn": ["prepack"]
-		},
-		"clean": {
-			"cache": false
-		},
-		"test": {
-			"dependsOn": ["prepack"],
-			"outputs": ["coverage/**"]
-		},
-		"test:watch": {
-			"dependsOn": ["prepack"],
-			"cache": false,
-			"outputs": ["coverage/**"]
-		},
-		"prepack": {
-			"dependsOn": ["^prepack"],
-			"outputs": ["dist/**"]
-		},
-		"start": {
-			"dependsOn": ["build"],
-			"cache": false
-		},
-		"dev": {
-			"dependsOn": ["prepack"],
-			"outputs": ["dist/**"],
-			"cache": false,
-			"persistent": true
-		}
-	},
-	"globalEnv": ["NODE_ENV"]
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "ci:attw": {
+      "dependsOn": ["prepack"]
+    },
+    "ci:publint": {
+      "dependsOn": ["prepack"]
+    },
+    "ci:type": {
+      "dependsOn": ["prepack"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["prepack"],
+      "outputs": ["coverage/**"]
+    },
+    "test:watch": {
+      "dependsOn": ["prepack"],
+      "cache": false,
+      "outputs": ["coverage/**"]
+    },
+    "prepack": {
+      "dependsOn": ["^prepack"],
+      "outputs": ["dist/**"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": ["prepack"],
+      "outputs": ["dist/**"],
+      "cache": false,
+      "persistent": true
+    }
+  },
+  "globalEnv": ["NODE_ENV"]
 }

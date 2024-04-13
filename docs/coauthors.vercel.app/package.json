@@ -1,38 +1,39 @@
 {
-	"name": "@coauthors/coauthors.io",
-	"version": "0.0.0-development",
-	"private": true,
-	"description": "Coauthors Official Websites",
-	"keywords": [
-		"coauthors",
-		"@coauthors/core",
-		"@coauthors/cli",
-		"@coauthors/precommit"
-	],
-	"author": {
-		"name": "Jonghyeon Ko",
-		"email": "manudeli.ko@gmail.com"
-	},
-	"type": "commonjs",
-	"scripts": {
-		"build": "next build",
-		"ci:type": "tsc --noEmit",
-		"dev": "next dev -p 4000",
-		"start": "next start -p 4000"
-	},
-	"dependencies": {
-		"next": "^14.1.4",
-		"nextra": "^2.13.4",
-		"nextra-theme-docs": "^2.13.4",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@coauthors/tsconfig": "workspace:*",
-		"@types/react": "^18.2.75",
-		"@types/react-dom": "^18.2.24",
-		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.38",
-		"tailwindcss": "^3.4.3"
-	}
+  "name": "@coauthors/coauthors.vercel.app",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "Coauthors Official Websites",
+  "keywords": [
+    "coauthors",
+    "@coauthors/core",
+    "@coauthors/cli",
+    "@coauthors/precommit"
+  ],
+  "author": {
+    "name": "Jonghyeon Ko",
+    "email": "manudeli.ko@gmail.com"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "build": "next build",
+    "ci:type": "tsc --noEmit",
+    "dev": "next dev -p 4000",
+    "start": "next start -p 4000"
+  },
+  "dependencies": {
+    "@coauthors/core": "workspace:*",
+    "next": "^14.1.4",
+    "nextra": "^2.13.4",
+    "nextra-theme-docs": "^2.13.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@coauthors/tsconfig": "workspace:*",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
 }
