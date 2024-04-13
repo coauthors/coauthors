@@ -1,0 +1,10 @@
+"@coauthors/core":
+  - "packages/core/**/*"
+"@coauthors/cli":
+  - "packages/cli/**/*"
+"@coauthors/precommit":
+  - "packages/precommit/**/*"
+"coauthors.vercel.app":
+  - "docs/coauthors.vercel.app/**/*"
+"dependencies":
+  - "pnpm-lock.yaml"
