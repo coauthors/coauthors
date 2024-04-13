@@ -56,8 +56,17 @@ importers:
 
   configs/tsconfig: {}
 
-  docs/coauthors.io:
+  configs/tsup:
+    devDependencies:
+      '@coauthors/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
+  docs/coauthors.vercel.app:
     dependencies:
+      '@coauthors/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       next:
         specifier: ^14.1.4
         version: 14.1.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)
@@ -98,19 +107,29 @@ importers:
       '@clack/prompts':
         specifier: ^0.7.0
         version: 0.7.0
+      '@coauthors/core':
+        specifier: workspace:^0.0.1
+        version: link:../core
     devDependencies:
-      '@biomejs/biome':
-        specifier: 1.6.4
-        version: 1.6.4
-      '@types/node':
-        specifier: ^20.12.7
-        version: 20.12.7
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.5)
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
+      '@coauthors/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+      '@coauthors/tsup':
+        specifier: workspace:*
+        version: link:../../configs/tsup
+
+  packages/core:
+    dependencies:
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
+    devDependencies:
+      '@coauthors/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+      '@coauthors/tsup':
+        specifier: workspace:*
+        version: link:../../configs/tsup
 
 packages:
 
