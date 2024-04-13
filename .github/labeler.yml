@@ -1,15 +1,15 @@
 "@coauthors/core":
   - changed-files:
-      - any-glob-to-any-file: "packages/core/**/*"
+      - any-glob-to-any-file: ["packages/core/**/*"]
 "@coauthors/cli":
   - changed-files:
-      - any-glob-to-any-file: "packages/cli/**/*"
+      - any-glob-to-any-file: ["packages/cli/**/*"]
 "@coauthors/precommit":
   - changed-files:
-      - any-glob-to-any-file: "packages/precommit/**/*"
+      - any-glob-to-any-file: ["packages/precommit/**/*"]
 "coauthors.vercel.app":
   - changed-files:
-      - any-glob-to-any-file: "docs/coauthors.vercel.app/**/*"
+      - any-glob-to-any-file: ["docs/coauthors.vercel.app/**/*"]
 "dependencies":
   - changed-files:
-      - any-glob-to-any-file: "pnpm-lock.yaml"
+      - any-glob-to-any-file: ["pnpm-lock.yaml"]
