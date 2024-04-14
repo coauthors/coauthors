@@ -46,10 +46,12 @@
     "test:watch": "vitest --ui --coverage --typecheck"
   },
   "dependencies": {
+    "node-fetch": "^2.7.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@coauthors/tsconfig": "workspace:*",
-    "@coauthors/tsup": "workspace:*"
+    "@coauthors/tsup": "workspace:*",
+    "@types/node-fetch": "^2.6.11"
   }
 }
