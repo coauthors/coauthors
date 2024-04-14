@@ -52,7 +52,7 @@ export const CoauthorsGenerator = () => {
           author.user === user ? { ...author, name } : author,
         ),
       ),
-    1000,
+    200,
   );
 
   return (
