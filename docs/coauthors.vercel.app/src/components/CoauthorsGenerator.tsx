@@ -95,6 +95,7 @@ export const CoauthorsGenerator = () => {
           ) : null}
           {authors.map(({ name, user }) => (
             <QueryErrorBoundary
+              key={user}
               fallback={() => (
                 <ErrorBoundaryFallback
                   username={user}
@@ -126,7 +127,7 @@ export const CoauthorsGenerator = () => {
                     onChange={(e) =>
                       debouncedSetAuthors({ user, name: e.target.value })
                     }
-                    placeholder="Please enter name"
+                    placeholder="Change name if need"
                   />
                   <button
                     type="button"
