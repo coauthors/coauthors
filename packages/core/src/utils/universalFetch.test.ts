@@ -10,7 +10,6 @@ describe("universalFetch", () => {
 
   afterEach(() => {
     vi.clearAllMocks();
-    vi.restoreAllMocks();
   });
 
   it("should use window.fetch in browser environment", async () => {
