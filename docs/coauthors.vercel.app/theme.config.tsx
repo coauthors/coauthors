@@ -36,7 +36,7 @@ const config: DocsThemeConfig = {
           content={frontMatter.description || "Make us as Co-author easily"}
         />
         <meta property="og:image" content="/banner.png" />
-        <link rel="icon" href="/favicon.ico" type="image/ico" />
+        <link rel="icon" href="/img/favicon.ico" type="image/ico" />
       </>
     );
   },
