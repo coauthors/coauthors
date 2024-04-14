@@ -71,7 +71,7 @@ export const CoauthorsGenerator = () => {
         <div className="flex items-center w-full gap-2">
           <span className="flex-1">
             <input
-              className="rounded w-full p-2 h-10"
+              className="rounded w-full border-black border-opacity-10 border p-2 h-10"
               id="user"
               type="text"
               placeholder="GitHub Username"
@@ -80,7 +80,7 @@ export const CoauthorsGenerator = () => {
             />
           </span>
           <button
-            className="bg-white bg-opacity-10 rounded h-10 px-4"
+            className="bg-black rounded h-10 px-4 text-white"
             type="submit"
           >
             Add
@@ -89,7 +89,7 @@ export const CoauthorsGenerator = () => {
       </form>
       <br />
       <Delay ms={1}>
-        <section className="flex flex-col gap-3 border-white border-opacity-10 border p-4 rounded-md">
+        <section className="flex flex-col gap-3 bg-[#fafafa] border-black border-opacity-10 border p-4 rounded-md">
           {authors.length === 0 ? (
             <p className="opacity-60">Add new one as co-author by upper form</p>
           ) : null}
@@ -122,7 +122,7 @@ export const CoauthorsGenerator = () => {
                 </Suspense>
                 <div className="flex items-center gap-2 w-full xl:w-auto">
                   <input
-                    className="rounded xl:w-[180px] p-2 h-10 flex-1 select-none"
+                    className="rounded border-black border-opacity-10 border xl:w-[180px] p-2 h-10 flex-1 select-none"
                     type="text"
                     onChange={(e) =>
                       debouncedSetAuthors({ user, name: e.target.value })

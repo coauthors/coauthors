@@ -92,7 +92,7 @@ const config: DocsThemeConfig = {
   },
   darkMode: false,
   nextThemes: {
-    forcedTheme: "dark",
+    forcedTheme: "light",
   },
 };
 
