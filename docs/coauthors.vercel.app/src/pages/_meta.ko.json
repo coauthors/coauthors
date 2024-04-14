@@ -1,17 +1,18 @@
 {
-	"index": {
-		"type": "page",
-		"display": "hidden",
-		"theme": {
-			"layout": "full"
-		}
-	},
-	"docs": {
-		"type": "page",
-		"title": "문서보기"
-	},
-	"generator": {
-		"type": "page",
-		"title": "제네레이터"
-	}
+  "index": {
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "문서보기"
+  },
+  "generator": {
+    "type": "page",
+    "title": "제네레이터",
+    "href": "/docs/generator"
+  }
 }
