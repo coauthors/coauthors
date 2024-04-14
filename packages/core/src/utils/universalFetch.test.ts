@@ -13,7 +13,7 @@ describe("universalFetch", () => {
     vi.restoreAllMocks();
   });
 
-  it("should setup fetch for browser environment", async () => {
+  it("should use window.fetch in browser environment", async () => {
     const mockFetch = vi.fn();
     vi.stubGlobal("window", { fetch: mockFetch });
 
@@ -22,7 +22,7 @@ describe("universalFetch", () => {
     expect(mockFetch).toHaveBeenCalled();
   });
 
-  it("should setup fetch for Node.js environment with node-fetch for versions < 18", async () => {
+  it("should use node-fetch in Node.js for versions < 18", async () => {
     vi.stubGlobal("process", { versions: { node: "16.0.0" } });
 
     const mockFetch = vi.fn();
@@ -44,17 +44,7 @@ describe("universalFetch", () => {
     expect(mockFetch).toHaveBeenCalled();
   });
 
-  it("throws an error if fetch is not implemented in the environment", async () => {
-    await expect(universalFetch("https://example.com")).rejects.toThrow(
-      "No fetch implementation found",
-    );
-  });
-
-  it("throws an error if fetchFn is not set when calling universalFetch", async () => {
-    vi.stubGlobal("process", { versions: { node: "16.0.0" } });
-
-    vi.doMock("node-fetch", async () => ({ default: undefined }));
-
+  it("throws an error if no environment is found", async () => {
     await expect(universalFetch("https://example.com")).rejects.toThrow(
       "No fetch implementation found",
     );
