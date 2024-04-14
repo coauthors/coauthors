@@ -1,17 +1,18 @@
 {
-	"index": {
-		"type": "page",
-		"display": "hidden",
-		"theme": {
-			"layout": "full"
-		}
-	},
-	"docs": {
-		"type": "page",
-		"title": "Documentation"
-	},
-	"generator": {
-		"type": "page",
-		"title": "Generator"
-	}
+  "index": {
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  },
+  "generator": {
+    "type": "page",
+    "title": "Generator",
+    "href": "/docs/generator"
+  }
 }

@@ -1,16 +1,17 @@
 {
-	"intro": "Getting Started",
-	"--- Packages": {
-		"type": "separator",
-		"title": "Packages"
-	},
-	"core": "@coauthors/core",
-	"cli": "@coauthors/cli",
-	"precommit": "@coauthors/precommit",
-	"--- More": {
-		"type": "separator",
-		"title": "More"
-	},
-	"changelogs": "Changelogs",
-	"links": "Related Links"
+  "intro": "Getting Started",
+  "generator": "Generator",
+  "--- Packages": {
+    "type": "separator",
+    "title": "Packages"
+  },
+  "core": "@coauthors/core",
+  "cli": "@coauthors/cli",
+  "precommit": "@coauthors/precommit",
+  "--- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "changelogs": "Changelogs",
+  "links": "Related Links"
 }
