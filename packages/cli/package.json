@@ -1,6 +1,6 @@
 {
   "name": "@coauthors/cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility tool to simplify the process of adding co-authors to GitHub commits, streamlining collaboration directly from the command line.",
   "keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
   "homepage": "https://github.com/coauthors/coauthors",
@@ -31,10 +31,13 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@coauthors/core": "workspace:0.0.1"
+    "@coauthors/core": "workspace:0.0.2"
   },
   "devDependencies": {
     "@coauthors/tsconfig": "workspace:*",
     "@coauthors/tsup": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
