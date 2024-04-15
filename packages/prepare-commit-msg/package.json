@@ -1,6 +1,6 @@
 {
   "name": "@coauthors/prepare-commit-msg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "Make us as co-author easily",
   "keywords": ["github", "co-author", "git", "collaboration"],
@@ -47,10 +47,13 @@
     "test:watch": "vitest --ui --coverage --typecheck"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.0.1"
+    "@coauthors/core": "workspace:0.0.2"
   },
   "devDependencies": {
     "@coauthors/tsconfig": "workspace:*",
     "@coauthors/tsup": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
