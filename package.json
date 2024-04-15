@@ -9,7 +9,7 @@
     "git",
     "collaboration",
     "cli",
-    "precommit",
+    "prepare-commit-msg",
     "generator"
   ],
   "repository": {
