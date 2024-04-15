@@ -138,7 +138,7 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@coauthors/core':
-        specifier: workspace:^0.0.1
+        specifier: workspace:0.0.1
         version: link:../core
     devDependencies:
       '@coauthors/tsconfig':
@@ -166,6 +166,19 @@ importers:
       '@types/node-fetch':
         specifier: ^2.6.11
         version: 2.6.11
+
+  packages/prepare-commit-msg:
+    dependencies:
+      '@coauthors/core':
+        specifier: workspace:0.0.1
+        version: link:../core
+    devDependencies:
+      '@coauthors/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+      '@coauthors/tsup':
+        specifier: workspace:*
+        version: link:../../configs/tsup
 
 packages:
 

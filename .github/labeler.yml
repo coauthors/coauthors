@@ -4,9 +4,9 @@
 "@coauthors/cli":
   - changed-files:
       - any-glob-to-any-file: ["packages/cli/**/*"]
-"@coauthors/precommit":
+"@coauthors/prepare-commit-msg":
   - changed-files:
-      - any-glob-to-any-file: ["packages/precommit/**/*"]
+      - any-glob-to-any-file: ["packages/prepare-commit-msg/**/*"]
 "coauthors.vercel.app":
   - changed-files:
       - any-glob-to-any-file: ["docs/coauthors.vercel.app/**/*"]

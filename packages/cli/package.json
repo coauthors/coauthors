@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@coauthors/core": "workspace:^0.0.1"
+    "@coauthors/core": "workspace:0.0.1"
   },
   "devDependencies": {
     "@coauthors/tsconfig": "workspace:*",

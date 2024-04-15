@@ -7,7 +7,7 @@
   },
   "core": "@coauthors/core",
   "cli": "@coauthors/cli",
-  "precommit": "@coauthors/precommit",
+  "prepare-commit-msg": "@coauthors/prepare-commit-msg",
   "--- More": {
     "type": "separator",
     "title": "더보기"
