@@ -1,0 +1,10 @@
+{
+  "extends": "@coauthors/tsconfig/base.json",
+  "include": ["."],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist"
+  }
+}

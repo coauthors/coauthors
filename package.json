@@ -1,38 +1,61 @@
 {
-	"name": "coauthors-cli",
-	"version": "1.0.01",
-	"description": "A utility tool to simplify the process of adding co-authors to GitHub commits, streamlining collaboration directly from the command line.",
-	"main": "src/index.ts",
-	"scripts": {
-		"build": "tsup",
-		"start": "node dist/index.js",
-		"prepare": "husky",
-		"preinstall": "corepack enable"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+git@github.com:coauthors/cli.git"
-	},
-	"bin": {
-		"coauthors-cli": "./dist/index.js"
-	},
-	"packageManager": "pnpm@8.15.2",
-	"keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
-	"author": "2-NOW <kj109888@gmail.com>",
-	"license": "ISC",
-	"devDependencies": {
-		"@biomejs/biome": "1.6.4",
-		"@types/node": "^20.12.7",
-		"husky": "^9.0.11",
-		"nano-staged": "^0.8.0",
-		"tsup": "^8.0.2",
-		"typescript": "^5.4.5"
-	},
-	"dependencies": {
-		"@clack/prompts": "^0.7.0"
-	},
-	"homepage": "https://github.com:coauthors/cli/blob/main/README.md",
-	"bugs": {
-		"url": "https://github.com:coauthors/cli/co-author-cli/issues"
-	}
+  "name": "coauthors",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Make us as Co-author easily",
+  "keywords": [
+    "github",
+    "coauthors",
+    "git",
+    "collaboration",
+    "cli",
+    "prepare-commit-msg",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coauthors/coauthors.git"
+  },
+  "packageManager": "pnpm@8.15.2",
+  "scripts": {
+    "build": "turbo run build",
+    "build:watch": "turbo run build:watch --parallel",
+    "changeset": "changeset",
+    "changeset:publish": "pnpm prepack && changeset publish",
+    "changeset:version": "changeset version && pnpm i --lockfile-only",
+    "ci:all": "pnpm ci:attw && pnpm ci:publint && pnpm ci:sherif && pnpm ci:type && pnpm test && pnpm build",
+    "ci:attw": "turbo run ci:attw",
+    "ci:publint": "turbo run ci:publint",
+    "ci:sherif": "sherif",
+    "ci:type": "turbo run ci:type",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "graph": "rimraf ./graph && mkdir graph && turbo run build --graph=graph/index.html",
+    "packlint": "packlint sort -R",
+    "preinstall": "corepack enable",
+    "prepack": "turbo run prepack",
+    "prepare": "husky install",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch --parallel"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.3",
+    "@biomejs/biome": "1.6.4",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.12.7",
+    "@vitest/coverage-istanbul": "^1.4.0",
+    "nano-staged": "^0.8.0",
+    "packlint": "^0.2.4",
+    "publint": "^0.2.7",
+    "rimraf": "^5.0.5",
+    "sherif": "^0.8.1",
+    "husky": "^9.0.11",
+    "tsup": "^8.0.2",
+    "turbo": "latest",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8",
+    "vitest": "^1.4.0"
+  }
 }

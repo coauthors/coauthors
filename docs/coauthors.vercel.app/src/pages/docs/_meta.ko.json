@@ -1,0 +1,17 @@
+{
+  "intro": "시작하기",
+  "generator": "생성기",
+  "--- Packages": {
+    "type": "separator",
+    "title": "패키지"
+  },
+  "core": "@coauthors/core",
+  "cli": "@coauthors/cli",
+  "prepare-commit-msg": "@coauthors/prepare-commit-msg",
+  "--- More": {
+    "type": "separator",
+    "title": "더보기"
+  },
+  "changelogs": "Changelogs",
+  "links": "관련 링크"
+}

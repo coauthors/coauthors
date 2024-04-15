@@ -1,0 +1,49 @@
+{
+  "name": "@coauthors/coauthors.vercel.app",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "Coauthors Official Websites",
+  "keywords": [
+    "coauthors",
+    "@coauthors/core",
+    "@coauthors/cli",
+    "@coauthors/prepare-commit-msg"
+  ],
+  "author": {
+    "name": "Jonghyeon Ko",
+    "email": "manudeli.ko@gmail.com"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "build": "next build",
+    "ci:type": "tsc --noEmit",
+    "dev": "next dev -p 4000",
+    "start": "next start -p 4000"
+  },
+  "dependencies": {
+    "@coauthors/core": "workspace:*",
+    "@hookform/resolvers": "^3.3.4",
+    "@suspensive/react": "2.0.0-beta.9",
+    "@suspensive/react-query": "2.0.0-beta.9",
+    "@tanstack/react-query": "^4.36.1",
+    "@tanstack/react-query-devtools": "^4.36.1",
+    "axios": "^1.6.8",
+    "next": "^14.1.4",
+    "nextra": "^2.13.4",
+    "nextra-theme-docs": "^2.13.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
+    "usehooks-ts": "^3.1.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@coauthors/tsconfig": "workspace:*",
+    "@hookform/devtools": "^4.3.1",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}

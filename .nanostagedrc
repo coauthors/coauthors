@@ -1,4 +1,4 @@
 {
-	"*.{ts,json,jsonc}": ["biome format", "biome lint"],
-	"*.ts": ["tsc --noEmit"]
+	"*.{ts,tsx,json,jsonc}": ["biome format --write", "biome lint"],
+	"*.tsx": ["tsc --noEmit"]
 }

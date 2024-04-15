@@ -1,0 +1,17 @@
+{
+  "intro": "Getting Started",
+  "generator": "Generator",
+  "--- Packages": {
+    "type": "separator",
+    "title": "Packages"
+  },
+  "core": "@coauthors/core",
+  "cli": "@coauthors/cli",
+  "prepare-commit-msg": "@coauthors/prepare-commit-msg",
+  "--- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "changelogs": "Changelogs",
+  "links": "Related Links"
+}
