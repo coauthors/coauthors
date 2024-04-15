@@ -17,6 +17,9 @@
     "ignore": ["node_modules", "dist", ".next"]
   },
   "json": {
+    "parser": {
+      "allowTrailingCommas": true
+    },
     "formatter": {
       "enabled": true
     }
