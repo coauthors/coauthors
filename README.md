@@ -32,22 +32,22 @@ yarn add -D @coauthors/cli
 <br/>
 <br/>
 
-## @coauthors/precommit
+## @coauthors/prepare-commit-msg
 
 ### Features
 
 ### Installation
 
 ```shell
-npm install -D @coauthors/precommit
+npm install -D @coauthors/prepare-commit-msg
 ```
 
 ```shell
-pnpm add -D @coauthors/precommit
+pnpm add -D @coauthors/prepare-commit-msg
 ```
 
 ```shell
-yarn add -D @coauthors/precommit
+yarn add -D @coauthors/prepare-commit-msg
 ```
 
 ### Usage
