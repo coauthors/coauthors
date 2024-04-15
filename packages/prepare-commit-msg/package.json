@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/coauthors/coauthors.git",
-    "directory": "packages/core"
+    "directory": "packages/prepare-commit-msg"
   },
   "license": "MIT",
   "author": {
