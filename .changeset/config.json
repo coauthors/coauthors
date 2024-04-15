@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "coauthors/coauthors" }
+  ],
+  "commit": false,
+  "fixed": [["@coauthors/core", "@coauthors/cli", "@coauthors/precommit"]],
+  "ignore": ["@coauthors/coauthors.vercel.app"],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
+  }
+}
