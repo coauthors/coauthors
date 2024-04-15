@@ -1,5 +1,5 @@
 ---
-"@coauthors/precommit": patch
+'@coauthors/prepare-commit-msg': patch
 ---
 
 changesets test

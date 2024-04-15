@@ -5,7 +5,9 @@
     { "repo": "coauthors/coauthors" }
   ],
   "commit": false,
-  "fixed": [["@coauthors/core", "@coauthors/cli", "@coauthors/precommit"]],
+  "fixed": [
+    ["@coauthors/core", "@coauthors/cli", "@coauthors/prepare-commit-msg"]
+  ],
   "ignore": ["@coauthors/coauthors.vercel.app"],
   "linked": [],
   "access": "restricted",

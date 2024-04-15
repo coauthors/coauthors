@@ -7,7 +7,7 @@
     "coauthors",
     "@coauthors/core",
     "@coauthors/cli",
-    "@coauthors/precommit"
+    "@coauthors/prepare-commit-msg"
   ],
   "author": {
     "name": "Jonghyeon Ko",
