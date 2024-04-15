@@ -21,3 +21,8 @@ jobs:
       - uses: ./.github/actions/pnpm-setup-node
       - run: pnpm install --frozen-lockfile
       - run: pnpm ${{ matrix.command }}
+      - if: matrix.command == 'test'
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
