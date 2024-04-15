@@ -68,9 +68,14 @@ describe("universalFetch", () => {
   it("should not use node-fetch in Node.js for versions >= 18", async () => {
     vi.stubGlobal("process", { versions: { node: "18.0.0" } });
 
+    let nodeFetchCalled = false;
     const mockNodeFetch = vi.fn();
     const mockFetch = vi.fn();
-    vi.doMock("node-fetch", async () => ({ default: mockNodeFetch }));
+    vi.doMock("node-fetch", async () => {
+      nodeFetchCalled = true;
+      return { default: mockNodeFetch };
+    });
+
     vi.stubGlobal("fetch", mockFetch);
 
     const mod = await import("./universalFetch");
@@ -80,6 +85,7 @@ describe("universalFetch", () => {
 
     expect(mockFetch).toHaveBeenCalled();
     expect(mockNodeFetch).not.toHaveBeenCalled();
+    expect(nodeFetchCalled).toBe(false);
   });
 
   it("throws an error if no environment is found", async () => {
