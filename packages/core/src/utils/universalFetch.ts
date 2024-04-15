@@ -1,3 +1,4 @@
+let fetchFn: typeof fetch | undefined;
 export async function setupFetch() {
   if (typeof window !== "undefined" && window.fetch) {
     return window.fetch;
@@ -17,12 +18,21 @@ export async function setupFetch() {
   return undefined;
 }
 
+async function initialize() {
+  fetchFn = await setupFetch();
+}
+if (!fetchFn) initialize();
+
 export async function universalFetch(
   input: Parameters<typeof fetch>[0],
   init?: Parameters<typeof fetch>[1],
 ) {
-  const fetchFn = await setupFetch();
-  if (!fetchFn) throw new Error("No fetch implementation found");
-
+  if (!fetchFn) {
+    await initialize();
+  }
+  // if fetchFn is still undefined, throw an error
+  if (!fetchFn) {
+    throw new Error("No fetch implementation found");
+  }
   return fetchFn(input, init);
 }
