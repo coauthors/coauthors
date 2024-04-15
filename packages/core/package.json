@@ -2,12 +2,7 @@
   "name": "@coauthors/core",
   "version": "0.0.2",
   "description": "Make us as co-author easily",
-  "keywords": [
-    "github",
-    "co-author",
-    "git",
-    "collaboration"
-  ],
+  "keywords": ["github", "co-author", "git", "collaboration"],
   "homepage": "https://github.com/coauthors/coauthors",
   "bugs": "https://github.com/coauthors/coauthors/issues",
   "repository": {
@@ -38,10 +33,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "scripts": {
     "build": "tsup",
     "ci:attw": "attw --pack",
@@ -61,5 +53,8 @@
     "@coauthors/tsconfig": "workspace:*",
     "@coauthors/tsup": "workspace:*",
     "@types/node-fetch": "^2.6.11"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
