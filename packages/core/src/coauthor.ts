@@ -1,8 +1,7 @@
-import type { z } from "zod";
-import { authorSchema } from "./schemas";
+import { type Author, authorSchema } from "./schemas";
 import { githubUser } from "./utils/githubUser";
 
-export const coauthor = (author: z.infer<typeof authorSchema>) =>
+export const coauthor = (author: Author) =>
   githubUser(authorSchema.parse(author).user).then(
     (githubUser) =>
       `Co-authored-by: ${author.name ?? githubUser.name ?? author.user} <${
