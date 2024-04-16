@@ -7,14 +7,19 @@
     "enabled": true,
     "rules": {
       "recommended": true
-    }
+    },
+    "ignore": ["node_modules", "dist", ".next"]
   },
   "formatter": {
     "enabled": true,
     "indentWidth": 2,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "ignore": ["node_modules", "dist", ".next"]
   },
   "json": {
+    "parser": {
+      "allowTrailingCommas": true
+    },
     "formatter": {
       "enabled": true
     }

@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router.js";
-import { type DocsThemeConfig, useConfig } from "nextra-theme-docs";
+import { useConfig, type DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
   logo: function Logo() {
