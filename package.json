@@ -34,7 +34,7 @@
     "packlint": "packlint sort -R",
     "preinstall": "corepack enable",
     "prepack": "turbo run prepack",
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "turbo run start",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch --parallel"

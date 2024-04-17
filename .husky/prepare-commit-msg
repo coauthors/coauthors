@@ -1,0 +1,1 @@
+pnpm prepare-commit-msg $1
