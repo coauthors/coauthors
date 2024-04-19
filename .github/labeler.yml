@@ -7,6 +7,9 @@
 "@coauthors/prepare-commit-msg":
   - changed-files:
       - any-glob-to-any-file: ["packages/prepare-commit-msg/**/*"]
+"@coauthors/vscode":
+  - changed-files:
+      - any-glob-to-any-file: ["packages/vscode/**/*"]
 "coauthors.vercel.app":
   - changed-files:
       - any-glob-to-any-file: ["docs/coauthors.vercel.app/**/*"]

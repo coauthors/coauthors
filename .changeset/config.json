@@ -6,7 +6,12 @@
   ],
   "commit": false,
   "fixed": [
-    ["@coauthors/core", "@coauthors/cli", "@coauthors/prepare-commit-msg"]
+    [
+      "@coauthors/core",
+      "@coauthors/cli",
+      "@coauthors/prepare-commit-msg",
+      "@coauthors/vscode"
+    ]
   ],
   "ignore": ["@coauthors/coauthors.vercel.app"],
   "linked": [],
