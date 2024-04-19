@@ -17,5 +17,8 @@
   "[jsonc]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.exclude": { "out": false },
+  "search.exclude": { "out": true },
+  "typescript.tsc.autoDetect": "off"
 }

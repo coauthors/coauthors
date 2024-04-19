@@ -1,0 +1,46 @@
+{
+  "name": "@coauthors/vscode",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Make us as Co-author easily",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coauthors/coauthors.git",
+    "directory": "packages/vscode"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jonghyeon Ko",
+    "email": "manudeli.ko@gmail.com"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "clean": "rimraf ./.vscode-test && rimraf ./out",
+    "compile": "pnpm clean && tsc -p ./",
+    "extension:watch": "tsc -watch -p ./",
+    "test": "pnpm compile && vscode-test",
+    "test:watch": "pnpm compile && vscode-test --watch",
+    "vscode:prepublish": "pnpm compile",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/vscode": "^1.88.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  },
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "activationEvents": [],
+  "categories": ["Other"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "displayName": "coauthors"
+}
