@@ -1,1 +1,1 @@
-pnpm prepare-commit-msg $1
+npx @coauthors/prepare-commit-msg $1
