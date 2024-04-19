@@ -17,7 +17,6 @@
   "scripts": {
     "clean": "rimraf ./.vscode-test && rimraf ./out",
     "compile": "pnpm clean && tsc -p ./",
-    "extension:watch": "tsc -watch -p ./",
     "test": "pnpm compile && vscode-test",
     "test:watch": "pnpm compile && vscode-test --watch",
     "vscode:prepublish": "pnpm compile",

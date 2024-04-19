@@ -7,7 +7,7 @@
       "request": "launch",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/vscode"],
       "outFiles": ["${workspaceFolder}/packages/vscode/out/**/*.js"],
-      "preLaunchTask": "pnpm extension:watch"
+      "preLaunchTask": "${defaultBuildTask}"
     }
   ]
 }
