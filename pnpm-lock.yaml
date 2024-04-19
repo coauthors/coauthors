@@ -190,6 +190,10 @@ importers:
         version: link:../../configs/tsup
 
   packages/vscode:
+    dependencies:
+      '@coauthors/core':
+        specifier: workspace:0.0.2
+        version: link:../core
     devDependencies:
       '@types/mocha':
         specifier: ^10.0.6

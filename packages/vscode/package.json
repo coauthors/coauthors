@@ -23,6 +23,9 @@
     "vscode:prepublish": "pnpm compile",
     "watch": "tsc -watch -p ./"
   },
+  "dependencies": {
+    "@coauthors/core": "workspace:0.0.2"
+  },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/vscode": "^1.88.0",
