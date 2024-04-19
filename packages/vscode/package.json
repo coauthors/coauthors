@@ -24,7 +24,7 @@
     "watch": "tsc -watch -p ./"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.0.2"
+    "@coauthors/core": "workspace:0.0.3"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
