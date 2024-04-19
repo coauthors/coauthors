@@ -1,7 +1,6 @@
 {
   "name": "@coauthors/prepare-commit-msg",
   "version": "0.0.2",
-  "private": true,
   "description": "Make us as co-author easily",
   "keywords": ["github", "co-author", "git", "collaboration"],
   "homepage": "https://github.com/coauthors/coauthors",
@@ -34,6 +33,9 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "@coauthors/prepare-commit-msg": "./dist/index.js"
+  },
   "files": ["dist", "src"],
   "scripts": {
     "build": "tsup",

@@ -1,6 +1,5 @@
-import type { z } from "zod";
 import { coauthor } from "./coauthor";
-import type { authorSchema } from "./schemas";
+import type { Author } from "./schemas";
 
-export const coauthors = (authors: z.infer<typeof authorSchema>[]) =>
+export const coauthors = (authors: Author[]) =>
   Promise.all(authors.map(coauthor)).then((coauthors) => coauthors.join("\n"));

@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+export type Author = z.infer<typeof authorSchema>;
+
 export const authorSchema = z.object({
   user: z.string().min(1),
   name: z.string().optional(),
