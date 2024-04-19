@@ -150,7 +150,7 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@coauthors/core':
-        specifier: workspace:0.0.2
+        specifier: workspace:0.0.3
         version: link:../core
     devDependencies:
       '@coauthors/tsconfig':
@@ -182,7 +182,7 @@ importers:
   packages/prepare-commit-msg:
     dependencies:
       '@coauthors/core':
-        specifier: workspace:0.0.2
+        specifier: workspace:0.0.3
         version: link:../core
     devDependencies:
       '@coauthors/tsconfig':
