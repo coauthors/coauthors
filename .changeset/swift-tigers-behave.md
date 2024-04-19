@@ -4,4 +4,4 @@
 "@coauthors/prepare-commit-msg": patch
 ---
 
-feat(prepare-commit-msg): init
+feat(prepare-commit-msg): initialization
