@@ -12,7 +12,7 @@ concurrency:
 jobs:
   quality:
     name: Check quality
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         command: ['ci:attw', 'ci:publint', 'ci:sherif', 'ci:type', 'test', 'build']
