@@ -14,7 +14,7 @@ jobs:
     name: Check quality
     strategy:
       matrix:
-        os: [macos-latest, macos-12, macos-11, macos-10.15, windows-latest, windows-2022, windows-2019]
+        os: [macos-latest, macos-12, windows-latest, windows-2022]
         command: ['ci:attw', 'ci:publint', 'ci:sherif', 'ci:type', 'test', 'build']
     runs-on: ${{ matrix.os }}
     steps:
