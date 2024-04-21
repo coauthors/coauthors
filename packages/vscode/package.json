@@ -1,0 +1,67 @@
+{
+  "name": "@coauthors/vscode",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Make us as Co-author easily",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coauthors/coauthors.git",
+    "directory": "packages/vscode"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jonghyeon Ko",
+    "email": "manudeli.ko@gmail.com"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "clean": "rimraf ./.vscode-test && rimraf ./out",
+    "compile": "pnpm clean && tsc -p ./",
+    "test": "pnpm compile && vscode-test",
+    "test:watch": "pnpm compile && vscode-test --watch",
+    "vscode:prepublish": "pnpm compile",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "@coauthors/core": "workspace:0.0.3"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/vscode": "^1.88.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  },
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "activationEvents": ["*"],
+  "categories": ["Other"],
+  "contributes": {
+    "commands": [
+      {
+        "category": "Coauthors",
+        "command": "coauthors.add",
+        "title": "Add Coauthors",
+        "icon": {
+          "light": "resources/cmd-icon-light.svg",
+          "dark": "resources/cmd-icon-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "coauthors.add",
+          "group": "navigation"
+        },
+        {
+          "command": "coauthors.add",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "displayName": "coauthors",
+  "extensionKind": ["workspace"],
+  "icon": "resources/icon.png"
+}

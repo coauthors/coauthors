@@ -60,6 +60,29 @@ yarn add -D @coauthors/prepare-commit-msg
 
 ### Usage
 
+<br/>
+<br/>
+
+## @coauthors/vscode
+
+### Features
+
+### Installation
+
+```shell
+npm install -D @coauthors/vscode
+```
+
+```shell
+pnpm add -D @coauthors/vscode
+```
+
+```shell
+yarn add -D @coauthors/vscode
+```
+
+### Usage
+
 ## Contributing
 
 Read our [Contributing Guide](./CONTRIBUTING.md) to familiarize yourself with Coauthors's development process, how to suggest bug fixes and improvements, and the steps for building and testing your changes.
