@@ -26,10 +26,6 @@ component_management:
       name: '@coauthors/cli'
       paths:
         - packages/cli/**
-    - component_id: prepare-commit-msg
-      name: '@coauthors/prepare-commit-msg'
-      paths:
-        - packages/prepare-commit-msg/**
     - component_id: vscode
       name: '@coauthors/vscode'
       paths:

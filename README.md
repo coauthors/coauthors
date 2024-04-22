@@ -13,75 +13,76 @@
 
 </div>
 
-## [Coauthors Generator](https://coauthors.vercel.app/docs/generator)
+## coauthors
+
+### `coauthors`: Git hook prepare-commit-msg with husky
+
+1. Setup with husky
+
+   ```shell
+   # .husky/prepare-commit-msg
+   npx coauthors
+   ```
+
+2. Commit with coauthors simply
+
+   ```shell
+   git commit -m "chore: update
+
+   coauthors: manudeli, 2-NOW(Whale)"
+   ```
+
+3. Commit message with coauthors prepare-commit-msg
+
+   ```text
+   chore: update
+
+   Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+   Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>
+   ```
+
+### `coauthors -m`: CLI to get commit message with coauthors
+
+1. With coauthors
+
+   ```shell
+   npx coauthors -m "chore: update
+
+   coauthors: manudeli, 2-NOW(Whale)"
+   ```
+
+   ```text
+   chore: update
+
+   Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+   Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>
+   ```
+
+2. Without coauthors
+
+   ```shell
+   npx coauthors -m "chore: update"
+   ```
+
+   ```text
+   chore: update
+   ```
+
+## Coauthors Generator
+
+[Enter Link (https://coauthors.vercel.app)](https://coauthors.vercel.app/docs/generator)
 
 [![Coauthors Generator](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.vercel.app/public/img/generator-example.gif)](https://coauthors.vercel.app/docs/generator)
 
-## @coauthors/cli
+## VSCode Extension
 
-### Features
+1. Icon on source control to add coauthor string easily
 
-### Installation
+   [![Coauthors VSCode Extension Example 1](https://raw.githubusercontent.com/coauthors/coauthors/main/assets/example-vscode-extension-1.png)](https://coauthors.vercel.app)
 
-```shell
-npm install -D @coauthors/cli
-```
+2. Status bar item to use Coauthors generator easily
 
-```shell
-pnpm add -D @coauthors/cli
-```
-
-```shell
-yarn add -D @coauthors/cli
-```
-
-### Usage
-
-<br/>
-<br/>
-
-## @coauthors/prepare-commit-msg
-
-### Features
-
-### Installation
-
-```shell
-npm install -D @coauthors/prepare-commit-msg
-```
-
-```shell
-pnpm add -D @coauthors/prepare-commit-msg
-```
-
-```shell
-yarn add -D @coauthors/prepare-commit-msg
-```
-
-### Usage
-
-<br/>
-<br/>
-
-## @coauthors/vscode
-
-### Features
-
-### Installation
-
-```shell
-npm install -D @coauthors/vscode
-```
-
-```shell
-pnpm add -D @coauthors/vscode
-```
-
-```shell
-yarn add -D @coauthors/vscode
-```
-
-### Usage
+   [![Coauthors VSCode Extension Example 2](https://raw.githubusercontent.com/coauthors/coauthors/main/assets/example-vscode-extension-2.png)](https://coauthors.vercel.app)
 
 ## Contributing
 

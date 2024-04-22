@@ -3,12 +3,7 @@
   "version": "0.0.0-development",
   "private": true,
   "description": "Coauthors Official Websites",
-  "keywords": [
-    "coauthors",
-    "@coauthors/core",
-    "@coauthors/cli",
-    "@coauthors/prepare-commit-msg"
-  ],
+  "keywords": ["coauthors", "@coauthors/core", "@coauthors/cli"],
   "author": {
     "name": "Jonghyeon Ko",
     "email": "manudeli.ko@gmail.com"

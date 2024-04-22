@@ -7,7 +7,6 @@
   },
   "core": "@coauthors/core",
   "cli": "@coauthors/cli",
-  "prepare-commit-msg": "@coauthors/prepare-commit-msg",
   "vscode": "@coauthors/vscode",
   "--- More": {
     "type": "separator",
