@@ -1,3 +1,6 @@
+"coauthors":
+  - changed-files:
+      - any-glob-to-any-file: ["packages/coauthors/**/*"]
 "@coauthors/core":
   - changed-files:
       - any-glob-to-any-file: ["packages/core/**/*"]

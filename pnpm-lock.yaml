@@ -32,6 +32,9 @@ importers:
       '@vitest/ui':
         specifier: ^1.5.0
         version: 1.5.0(vitest@1.5.0)
+      coauthors:
+        specifier: workspace:*
+        version: link:packages/coauthors
       husky:
         specifier: ^9.0.11
         version: 9.0.11
@@ -152,6 +155,25 @@ importers:
       '@coauthors/core':
         specifier: workspace:0.0.3
         version: link:../core
+    devDependencies:
+      '@coauthors/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+      '@coauthors/tsup':
+        specifier: workspace:*
+        version: link:../../configs/tsup
+
+  packages/coauthors:
+    dependencies:
+      '@coauthors/core':
+        specifier: workspace:0.0.3
+        version: link:../core
+      '@commander-js/extra-typings':
+        specifier: ^12.0.1
+        version: 12.0.1(commander@12.0.0)
+      commander:
+        specifier: ^12.0.0
+        version: 12.0.0
     devDependencies:
       '@coauthors/tsconfig':
         specifier: workspace:*
@@ -753,6 +775,14 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@commander-js/extra-typings@12.0.1(commander@12.0.0):
+    resolution: {integrity: sha512-OvkMobb1eMqOCuJdbuSin/KJkkZr7n24/UNV+Lcz/0Dhepf3r2p9PaGwpRpAWej7A+gQnny4h8mGhpFl4giKkg==}
+    peerDependencies:
+      commander: ~12.0.0
+    dependencies:
+      commander: 12.0.0
+    dev: false
 
   /@emotion/babel-plugin@11.11.0:
     resolution: {integrity: sha512-m4HEDZleaaCH+XgDDsPF15Ht6wTLsgDTeR3WYj9Q/k76JtWhrJjcP4+/XlG8LGT/Rol9qUfOIztXeA84ATpqPQ==}
@@ -2776,6 +2806,11 @@ packages:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
     dev: true
+
+  /commander@12.0.0:
+    resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
+    engines: {node: '>=18'}
+    dev: false
 
   /commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}

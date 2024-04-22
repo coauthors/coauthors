@@ -1,0 +1,44 @@
+{
+  "name": "coauthors",
+  "version": "0.0.3",
+  "description": "Make us as co-author easily",
+  "keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
+  "homepage": "https://github.com/coauthors/coauthors",
+  "bugs": "https://github.com/coauthors/coauthors/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coauthors/coauthors.git",
+    "directory": "packages/coauthors"
+  },
+  "license": "MIT",
+  "author": "manudeli(Jonghyeon Ko) & 2-NOW(HyunJae Lee)",
+  "sideEffects": false,
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "coauthors": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "ci:attw": "attw --pack",
+    "ci:publint": "publint --strict",
+    "ci:type": "tsc --noEmit",
+    "clean": "rimraf ./dist && rimraf ./coverage",
+    "prepack": "pnpm build",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@coauthors/core": "workspace:0.0.3",
+    "@commander-js/extra-typings": "^12.0.1",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@coauthors/tsconfig": "workspace:*",
+    "@coauthors/tsup": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
