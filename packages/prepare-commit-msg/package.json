@@ -1,6 +1,6 @@
 {
   "name": "@coauthors/prepare-commit-msg",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Make us as co-author easily",
   "keywords": ["github", "co-author", "git", "collaboration"],
   "homepage": "https://github.com/coauthors/coauthors",
@@ -49,7 +49,7 @@
     "test:watch": "vitest --ui --coverage --typecheck"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.0.3"
+    "@coauthors/core": "workspace:0.0.4"
   },
   "devDependencies": {
     "@coauthors/tsconfig": "workspace:*",

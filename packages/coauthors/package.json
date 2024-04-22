@@ -1,6 +1,6 @@
 {
   "name": "coauthors",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Make us as co-author easily",
   "keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
   "homepage": "https://github.com/coauthors/coauthors",
@@ -28,7 +28,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.0.3",
+    "@coauthors/core": "workspace:0.0.4",
     "@commander-js/extra-typings": "^12.0.1",
     "commander": "^12.0.0"
   },

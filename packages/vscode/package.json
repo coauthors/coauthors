@@ -1,6 +1,6 @@
 {
   "name": "@coauthors/vscode",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "private": true,
   "description": "Make us as Co-author easily",
   "repository": {
@@ -23,7 +23,7 @@
     "watch": "tsc -watch -p ./"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.0.3"
+    "@coauthors/core": "workspace:0.0.4"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
