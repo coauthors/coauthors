@@ -46,3 +46,6 @@ logs
 
 # Build files
 dist
+
+# VSCode
+.vscode-test

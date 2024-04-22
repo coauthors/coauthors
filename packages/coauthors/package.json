@@ -15,7 +15,7 @@
   "sideEffects": false,
   "type": "commonjs",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "bin": {
     "coauthors": "./dist/index.js"
