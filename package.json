@@ -21,6 +21,7 @@
   "scripts": {
     "build": "turbo run build",
     "build:watch": "turbo run build:watch --parallel",
+    "coauthors": "pnpm --filter='coauthors' prepack && packages/coauthors/dist/index.js",
     "changeset": "changeset",
     "changeset:publish": "pnpm prepack && changeset publish",
     "changeset:version": "changeset version && pnpm i --lockfile-only",

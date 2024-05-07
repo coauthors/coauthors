@@ -198,19 +198,6 @@ importers:
         specifier: ^2.6.11
         version: 2.6.11
 
-  packages/prepare-commit-msg:
-    dependencies:
-      '@coauthors/core':
-        specifier: workspace:0.0.4
-        version: link:../core
-    devDependencies:
-      '@coauthors/tsconfig':
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-      '@coauthors/tsup':
-        specifier: workspace:*
-        version: link:../../configs/tsup
-
   packages/vscode:
     dependencies:
       '@coauthors/core':
