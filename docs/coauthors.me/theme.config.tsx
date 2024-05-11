@@ -20,16 +20,13 @@ const config: DocsThemeConfig = {
   },
   head: function Head() {
     const { title, frontMatter } = useConfig();
-    const { asPath, defaultLocale, locale } = useRouter();
-    const url = `https://coauthors.me${
-      defaultLocale === locale ? asPath : `/${locale}${asPath}`
-    }`;
+    const { asPath } = useRouter();
 
     return (
       <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={title || "Coauthors"} />
-        <meta property="og:url" content={url} />
+        <meta property="og:url" content={`https://coauthors.me${asPath}`} />
         <meta
           property="og:description"
           content={frontMatter.description || "Make us as Co-author easily"}
@@ -73,7 +70,7 @@ const config: DocsThemeConfig = {
   },
   darkMode: false,
   nextThemes: {
-    forcedTheme: "light",
+    forcedTheme: "dark",
   },
 };
 

@@ -1,17 +1,14 @@
 {
-  "intro": "Getting Started",
+  "why": "Why Coauthors?",
+  "--- How to use": {
+    "type": "separator",
+    "title": "How to use"
+  },
+  "prepare-commit-msg": "Git Hook(prepare-commit-msg)",
+  "vscode": "VSCode Extension",
   "generator": "Generator",
-  "--- Packages": {
-    "type": "separator",
-    "title": "Packages"
+  "---": {
+    "type": "separator"
   },
-  "core": "@coauthors/core",
-  "cli": "@coauthors/cli",
-  "vscode": "@coauthors/vscode",
-  "--- More": {
-    "type": "separator",
-    "title": "More"
-  },
-  "changelogs": "Changelogs",
-  "links": "Related Links"
+  "changelogs": "Changelogs"
 }

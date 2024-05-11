@@ -4,9 +4,6 @@
 "@coauthors/core":
   - changed-files:
       - any-glob-to-any-file: ["packages/core/**/*"]
-"@coauthors/cli":
-  - changed-files:
-      - any-glob-to-any-file: ["packages/cli/**/*"]
 "@coauthors/vscode":
   - changed-files:
       - any-glob-to-any-file: ["packages/vscode/**/*"]

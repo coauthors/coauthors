@@ -1,8 +1,6 @@
 import { program } from "@commander-js/extra-typings";
 import packageJson from "../package.json";
-import { prepareCommitMsg } from "./utils";
-import { convert } from "./utils";
-import { log } from "./utils";
+import { convert, log, prepareCommitMsg } from "./utils";
 
 program
   .name("coauthors")

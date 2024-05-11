@@ -5,9 +5,7 @@
     { "repo": "coauthors/coauthors" }
   ],
   "commit": false,
-  "fixed": [
-    ["coauthors", "@coauthors/core", "@coauthors/cli", "@coauthors/vscode"]
-  ],
+  "fixed": [["coauthors", "@coauthors/core", "@coauthors/vscode"]],
   "ignore": ["@coauthors/coauthors.me"],
   "linked": [],
   "access": "restricted",

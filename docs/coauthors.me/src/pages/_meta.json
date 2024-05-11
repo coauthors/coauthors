@@ -8,11 +8,10 @@
   },
   "docs": {
     "type": "page",
-    "title": "Documentation"
+    "title": "Setup"
   },
   "generator": {
     "type": "page",
-    "title": "Generator",
-    "href": "/docs/generator"
+    "title": "Generator"
   }
 }
