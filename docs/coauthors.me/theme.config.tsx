@@ -52,17 +52,11 @@ const config: DocsThemeConfig = {
       };
     }
   },
-  feedback: { content: "" },
+  feedback: {
+    content: "",
+  },
   editLink: {
-    text: function Text() {
-      const router = useRouter();
-
-      if (router.pathname.includes(".ko")) {
-        return <>이 페이지를 수정하기 →</>;
-      }
-
-      return <>Edit this page →</>;
-    },
+    text: "Edit this page →",
   },
   sidebar: {
     titleComponent({ title }) {
@@ -71,20 +65,8 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 4,
     toggleButton: true,
   },
-  i18n: [
-    { locale: "en", text: "English" },
-    { locale: "ko", text: "한국어" },
-  ],
   search: {
-    placeholder: function Placeholder() {
-      const router = useRouter();
-
-      if (router.pathname.includes(".ko")) {
-        return "검색어를 입력하세요...";
-      }
-
-      return "Search documentation...";
-    },
+    placeholder: "Search documentation...",
   },
   footer: {
     text: "2024 © Coauthors authors.",
