@@ -8,7 +8,7 @@
   "fixed": [
     ["coauthors", "@coauthors/core", "@coauthors/cli", "@coauthors/vscode"]
   ],
-  "ignore": ["@coauthors/coauthors.vercel.app"],
+  "ignore": ["@coauthors/coauthors.me"],
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",

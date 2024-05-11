@@ -10,9 +10,9 @@
 "@coauthors/vscode":
   - changed-files:
       - any-glob-to-any-file: ["packages/vscode/**/*"]
-"coauthors.vercel.app":
+"coauthors.me":
   - changed-files:
-      - any-glob-to-any-file: ["docs/coauthors.vercel.app/**/*"]
+      - any-glob-to-any-file: ["docs/coauthors.me/**/*"]
 "dependencies":
   - changed-files:
       - any-glob-to-any-file: ["pnpm-lock.yaml"]

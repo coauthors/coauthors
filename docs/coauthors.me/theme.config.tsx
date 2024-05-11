@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router.js";
-import { useConfig, type DocsThemeConfig } from "nextra-theme-docs";
+import { type DocsThemeConfig, useConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
   logo: function Logo() {
@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
   head: function Head() {
     const { title, frontMatter } = useConfig();
     const { asPath, defaultLocale, locale } = useRouter();
-    const url = `https://coauthors.vercel.app${
+    const url = `https://coauthors.me${
       defaultLocale === locale ? asPath : `/${locale}${asPath}`
     }`;
 

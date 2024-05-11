@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand("coauthors.site", () => {
       vscode.env.openExternal(
-        vscode.Uri.parse("https://coauthors.vercel.app/docs/generator"),
+        vscode.Uri.parse("https://coauthors.me/docs/generator"),
       );
     }),
     new StatusBarItem(),

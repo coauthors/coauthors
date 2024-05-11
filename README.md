@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://coauthors.vercel.app" title="coauthors">
+  <a href="https://coauthors.me" title="coauthors">
     <img src="https://raw.githubusercontent.com/coauthors/coauthors/main/assets/banner.png" alt="coauthors" height="180" />
     <h1 align="center">Coauthors</h1>
   </a>
@@ -9,7 +9,7 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&color=000&labelColor=000)](https://github.com/coauthors/coauthors/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/@coauthors/core?color=000&labelColor=000&logo=npm&label=&style=for-the-badge)](https://www.npmjs.com/package/@coauthors/core) [![npm](https://img.shields.io/npm/dm/@coauthors/core?color=000&labelColor=000&style=for-the-badge)](https://www.npmjs.com/package/@coauthors/core)
 
-[![Coauthors friendly](https://img.shields.io/badge/Coauthors-friendly-blue.svg)](http://coauthors.vercel.app) [![codecov](https://codecov.io/gh/coauthors/coauthors/branch/main/graph/badge.svg?token=H4VQ71NJ16)](https://codecov.io/gh/coauthors/coauthors) ![GitHub stars](https://img.shields.io/github/stars/coauthors/coauthors?style=social) ![GitHub forks](https://img.shields.io/github/forks/coauthors/coauthors?style=social)
+[![Coauthors friendly](https://img.shields.io/badge/Coauthors-friendly-blue.svg)](http://coauthors.me) [![codecov](https://codecov.io/gh/coauthors/coauthors/branch/main/graph/badge.svg?token=H4VQ71NJ16)](https://codecov.io/gh/coauthors/coauthors) ![GitHub stars](https://img.shields.io/github/stars/coauthors/coauthors?style=social) ![GitHub forks](https://img.shields.io/github/forks/coauthors/coauthors?style=social)
 
 </div>
 
@@ -70,19 +70,19 @@
 
 ## Coauthors Generator
 
-[Enter Link (https://coauthors.vercel.app)](https://coauthors.vercel.app/docs/generator)
+[Enter Link (https://coauthors.me)](https://coauthors.me/docs/generator)
 
-[![Coauthors Generator](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.vercel.app/public/img/generator-example.gif)](https://coauthors.vercel.app/docs/generator)
+[![Coauthors Generator](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.me/public/img/generator-example.gif)](https://coauthors.me/docs/generator)
 
 ## VSCode Extension
 
 1. Icon on source control to add coauthor string easily
 
-   [![Coauthors VSCode Extension Example 1](https://raw.githubusercontent.com/coauthors/coauthors/main/assets/example-vscode-extension-1.png)](https://coauthors.vercel.app)
+   [![Coauthors VSCode Extension Example 1](https://raw.githubusercontent.com/coauthors/coauthors/main/assets/example-vscode-extension-1.png)](https://coauthors.me)
 
 2. Status bar item to use Coauthors generator easily
 
-   [![Coauthors VSCode Extension Example 2](https://raw.githubusercontent.com/coauthors/coauthors/main/assets/example-vscode-extension-2.png)](https://coauthors.vercel.app)
+   [![Coauthors VSCode Extension Example 2](https://raw.githubusercontent.com/coauthors/coauthors/main/assets/example-vscode-extension-2.png)](https://coauthors.me)
 
 ## Contributing
 
