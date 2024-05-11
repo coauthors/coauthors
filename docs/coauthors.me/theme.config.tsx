@@ -3,6 +3,7 @@ import { useRouter } from "next/router.js";
 import { type DocsThemeConfig, useConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
+  logoLink: "/why",
   logo: function Logo() {
     return (
       <div className="flex items-center gap-1">

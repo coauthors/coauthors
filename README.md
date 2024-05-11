@@ -13,7 +13,7 @@
 
 </div>
 
-## coauthors
+## Git Hook with Husky
 
 ### `coauthors`: Git hook prepare-commit-msg with husky
 
@@ -70,9 +70,9 @@
 
 ## Coauthors Generator
 
-[Enter Link (https://coauthors.me)](https://coauthors.me/docs/generator)
+[Enter Link (https://coauthors.me)](https://coauthors.me/generator)
 
-[![Coauthors Generator](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.me/public/img/generator-example.gif)](https://coauthors.me/docs/generator)
+[![Coauthors Generator](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.me/public/img/generator-example.gif)](https://coauthors.me/generator)
 
 ## VSCode Extension
 

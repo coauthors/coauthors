@@ -1,0 +1,38 @@
+import { Steps } from 'nextra/components'
+
+# Coauthors in commit message
+
+<Steps>
+
+### Copy & Paste
+
+```shell filename=".husky/prepare-commit-msg"
+npx coauthors
+```
+
+### Just Commit. That's all 🎉
+
+Add your Co-Author's username of GitHub at the end of the commit message.
+like `coauthors: <Co-Author>, <Co-Author>...`
+
+```shell /coauthors: manudeli, 2-NOW(Whale)/
+git commit -m "feat: add some feature
+
+coauthors: manudeli, 2-NOW(Whale)"
+```
+
+This git hook will convert commit message automatically like below
+
+```ansi /Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>/ /Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>/
+feat: add some feature
+
+Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>
+```
+
+</Steps>
+
+## Prerequisites
+
+- [Husky](https://typicode.github.io/husky/get-started.html)
+- [Node](https://nodejs.org/)

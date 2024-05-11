@@ -20,5 +20,8 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": { "out": false },
   "search.exclude": { "out": true },
-  "typescript.tsc.autoDetect": "off"
+  "typescript.tsc.autoDetect": "off",
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

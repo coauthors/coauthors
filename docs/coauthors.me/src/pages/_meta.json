@@ -1,17 +1,24 @@
 {
-  "index": {
-    "type": "page",
-    "display": "hidden",
-    "theme": {
-      "layout": "full"
-    }
-  },
   "docs": {
     "type": "page",
-    "title": "Setup"
+    "title": "Docs",
+    "href": "/why"
   },
-  "generator": {
+  "generator-link": {
     "type": "page",
-    "title": "Generator"
-  }
+    "title": "Generator",
+    "href": "/generator"
+  },
+  "why": "Why Coauthors?",
+  "--- How to use": {
+    "type": "separator",
+    "title": "How to use"
+  },
+  "git-hook": "Git Hook with Husky",
+  "generator": "Generator",
+  "vscode": "VSCode Extension (WIP)",
+  "---": {
+    "type": "separator"
+  },
+  "changelogs": "Changelogs"
 }

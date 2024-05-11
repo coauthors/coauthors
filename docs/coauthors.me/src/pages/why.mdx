@@ -1,0 +1,59 @@
+import { Steps } from 'nextra/components'
+import { Callout } from '../components'
+
+# Make easier to share ideas
+
+We leave tons of commits every day. And among these commits, there are many commits that were created based on ideas given to me by colleagues. In fact, good ideas are not code, but are written into code through discussion with many people and then committed.
+
+<Steps>
+
+### Co-Authoring can motivate idea givers
+
+![Example](/img/coauthor-example.png)
+
+There is a way to add idea giver as Co-Author of a commit in GitHub. Co-Authoring can motivate idea givers. At least it makes them feel good.
+
+<Callout>
+
+[GitHub | Creating a commit with multiple authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors)
+
+</Callout>
+
+But In our opinion, it's quite hard to make idea givers as Co-Author in commit message
+
+### Difficulties with Co-Authoring
+
+1. You must know exactly the grammar provided by GitHub. Spacing, text order, capitalization, etc. must be written accurately.
+
+   ```shell /Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>/ /Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>/
+   git commit -m "feat: add some feature
+
+   Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+   Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>"
+   ```
+
+2. The email must be registered in the other person's GitHub account. in addition, there is a high possibility that the email will not appear in the other person's GitHub profile.
+
+3. If you want the email to follow the format below, you need to know username and the numeric ID of Co-Author's GitHub account.
+
+   ```text /61593290/ /manudeli/
+   61593290+manudeli@users.noreply.github.com
+   ```
+
+### But, with Coauthors, only GitHub username is enough
+
+```shell /coauthors: manudeli, 2-NOW/
+git commit -m "Refactor usability tests.
+
+coauthors: manudeli, 2-NOW" // Commit message will be converted automatically
+```
+
+Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message.
+
+</Steps>
+
+## Then, Make idea giver as Co-Author easily! 🎉
+
+Setting up our tool is very simple. This type of Co-Authoring is possible simply by adding a very simple script such as `npx coauthors`.
+
+Bring better ideas to life with easier Co-Authoring

@@ -68,10 +68,10 @@ export const CoauthorsGenerator = () => {
         })}
         className="text-left"
       >
-        <div className="flex items-center w-full gap-2">
+        <div className="flex items-center w-full">
           <span className="flex-1">
             <input
-              className="rounded w-full border-black border-opacity-10 border p-2 h-10"
+              className="rounded-l-lg w-full py-2 px-4 h-10 bg-[#f9fafb1a]"
               id="user"
               type="text"
               placeholder="GitHub Username"
@@ -80,7 +80,7 @@ export const CoauthorsGenerator = () => {
             />
           </span>
           <button
-            className="bg-black rounded h-10 px-4 text-white"
+            className="bg-black rounded-r-lg h-10 px-4 text-white"
             type="submit"
           >
             Add
@@ -89,7 +89,7 @@ export const CoauthorsGenerator = () => {
       </form>
       <br />
       <Delay ms={1}>
-        <section className="flex flex-col gap-3 bg-[#fafafa] border-black border-opacity-10 border p-4 rounded-md">
+        <section className="flex flex-col gap-3 bg-[#00000040] border-white border-opacity-10 border p-4 rounded-lg">
           {authors.length === 0 ? (
             <p className="opacity-60">Add new one as co-author by upper form</p>
           ) : null}
@@ -122,12 +122,12 @@ export const CoauthorsGenerator = () => {
                 </Suspense>
                 <div className="flex items-center gap-2 w-full xl:w-auto">
                   <input
-                    className="rounded border-black border-opacity-10 border xl:w-[180px] p-2 h-10 flex-1 select-none"
+                    className="rounded-lg bg-[#f9fafb1a] border-black border-opacity-10 border xl:w-[180px] py-2 pl-4 h-10 flex-1 select-none"
                     type="text"
                     onChange={(e) =>
                       debouncedSetAuthors({ user, name: e.target.value })
                     }
-                    placeholder="Change name if need"
+                    placeholder="Custom name"
                   />
                   <button
                     type="button"
@@ -136,7 +136,7 @@ export const CoauthorsGenerator = () => {
                         prev.filter((authors) => authors.user !== user),
                       )
                     }
-                    className="select-none bg-white bg-opacity-10 w-[50px] h-10 rounded"
+                    className="select-none w-[50px] h-10 rounded"
                   >
                     🗑️
                   </button>
