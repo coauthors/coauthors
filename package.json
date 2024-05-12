@@ -30,7 +30,7 @@
     "ci:sherif": "sherif",
     "ci:type": "turbo run ci:type",
     "clean": "turbo run clean",
-    "coauthors": "pnpm --filter='coauthors' prepack && packages/coauthors/dist/index.js",
+    "coauthors": "pnpm --filter=coauthors prepack && node packages/coauthors/dist/index.js",
     "dev": "turbo run dev",
     "extension:compile": "pnpm --filter='@coauthors/vscode' compile",
     "graph": "rimraf ./graph && mkdir graph && turbo run build --graph=graph/index.html",
