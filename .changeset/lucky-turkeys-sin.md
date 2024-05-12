@@ -1,5 +1,5 @@
 ---
-"coauthors": patch
+"coauthors": minor
 ---
 
-Add Visualization Feature to console.log
+feat(coauthors): colorize terminal display
