@@ -147,7 +147,7 @@ importers:
   packages/coauthors:
     dependencies:
       '@coauthors/core':
-        specifier: workspace:0.0.4
+        specifier: workspace:0.1.0
         version: link:../core
       '@commander-js/extra-typings':
         specifier: ^12.0.1
@@ -185,7 +185,7 @@ importers:
   packages/vscode:
     dependencies:
       '@coauthors/core':
-        specifier: workspace:0.0.4
+        specifier: workspace:0.1.0
         version: link:../core
     devDependencies:
       '@types/mocha':
