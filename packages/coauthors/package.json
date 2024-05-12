@@ -24,8 +24,10 @@
     "ci:publint": "publint --strict",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
+    "dev": "tsup --watch",
     "prepack": "pnpm build",
-    "start": "node dist/index.js"
+    "test": "vitest run --coverage --typecheck",
+    "test:watch": "vitest --ui --coverage --typecheck"
   },
   "dependencies": {
     "@coauthors/core": "workspace:0.1.0",
