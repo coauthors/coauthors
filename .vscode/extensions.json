@@ -1,3 +1,8 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "ms-vscode.extension-test-runner"]
+  "recommendations": [
+    "coauthors.coauthors-vscode",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.extension-test-runner"
+  ]
 }
