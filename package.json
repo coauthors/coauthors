@@ -33,7 +33,7 @@
     "clean": "turbo run clean",
     "coauthors": "pnpm --filter=coauthors prepack && node packages/coauthors/dist/index.js",
     "dev": "turbo run dev",
-    "extension:compile": "pnpm --filter='@coauthors/vscode' compile",
+    "extension:compile": "pnpm --filter='coauthors-vscode' compile",
     "format": "prettier --write \"**/*.{ts,tsx,md,js,cjs,mjs}\"",
     "graph": "rimraf ./graph && mkdir graph && turbo run build --graph=graph/index.html",
     "packlint": "packlint sort -R",

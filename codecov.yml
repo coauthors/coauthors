@@ -22,7 +22,7 @@ component_management:
       name: "@coauthors/core"
       paths:
         - packages/core/**
-    - component_id: vscode
-      name: "@coauthors/vscode"
+    - component_id: coauthors-vscode
+      name: "coauthors-vscode"
       paths:
-        - packages/vscode/**
+        - packages/coauthors-vscode/**

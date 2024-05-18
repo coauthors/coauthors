@@ -1,12 +1,12 @@
 {
-  "name": "@coauthors/vscode",
+  "name": "coauthors-vscode",
   "version": "0.1.0",
   "private": true,
   "description": "Make us as Co-author easily",
   "repository": {
     "type": "git",
     "url": "https://github.com/coauthors/coauthors.git",
-    "directory": "packages/vscode"
+    "directory": "packages/coauthors-vscode"
   },
   "license": "MIT",
   "author": {
@@ -33,7 +33,8 @@
     "@types/mocha": "^10.0.6",
     "@types/vscode": "^1.88.0",
     "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.26.1"
   },
   "engines": {
     "vscode": "^1.88.0"

@@ -11,8 +11,8 @@ body:
       multiple: true
       options:
         - "coauthors"
+        - "coauthors-vscode"
         - "@coauthors/core"
-        - "@coauthors/vscode"
         - etc
     validations:
       required: true
