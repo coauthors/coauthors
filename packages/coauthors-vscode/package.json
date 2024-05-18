@@ -2,7 +2,7 @@
   "name": "coauthors-vscode",
   "version": "0.0.1",
   "private": true,
-  "description": "Make us as Co-author easily",
+  "description": "Easier to share ideas",
   "repository": {
     "type": "git",
     "url": "https://github.com/coauthors/coauthors.git",
@@ -72,7 +72,7 @@
       ]
     }
   },
-  "displayName": "coauthors",
+  "displayName": "Coauthors",
   "extensionKind": [
     "workspace"
   ],
