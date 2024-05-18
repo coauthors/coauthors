@@ -1,0 +1,22 @@
+{
+  "name": "@coauthors/eslint-config-ts",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "./no-import.js"
+  ],
+  "scripts": {
+    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\""
+  },
+  "dependencies": {
+    "@coauthors/eslint-config-js": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.4",
+    "eslint-plugin-prettier": "^5.1.3"
+  }
+}

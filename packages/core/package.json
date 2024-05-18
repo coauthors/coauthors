@@ -2,7 +2,12 @@
   "name": "@coauthors/core",
   "version": "0.1.0",
   "description": "Make us as co-author easily",
-  "keywords": ["github", "co-author", "git", "collaboration"],
+  "keywords": [
+    "github",
+    "co-author",
+    "git",
+    "collaboration"
+  ],
   "homepage": "https://github.com/coauthors/coauthors",
   "bugs": "https://github.com/coauthors/coauthors/issues",
   "repository": {
@@ -33,10 +38,14 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsup",
     "ci:attw": "attw --pack",
+    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:publint": "publint --strict",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
@@ -50,6 +59,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@coauthors/eslint-config-ts": "workspace:*",
     "@coauthors/tsconfig": "workspace:*",
     "@coauthors/tsup": "workspace:*",
     "@types/node-fetch": "^2.6.11"

@@ -1,18 +1,9 @@
-import type { Options } from "tsup";
+import type { Options } from 'tsup'
 
 export const options: Options = {
-  format: ["cjs", "esm"],
-  target: [
-    "chrome51",
-    "firefox53",
-    "edge18",
-    "safari11",
-    "ios11",
-    "opera38",
-    "es6",
-    "node14",
-  ],
-  entry: ["src/*.{ts,tsx}", "!**/*.{spec,test,test-d}.*"],
+  format: ['cjs', 'esm'],
+  target: ['chrome51', 'firefox53', 'edge18', 'safari11', 'ios11', 'opera38', 'es6', 'node14'],
+  entry: ['src/*.{ts,tsx}', '!**/*.{spec,test,test-d}.*'],
   sourcemap: true,
   dts: true,
-};
+}

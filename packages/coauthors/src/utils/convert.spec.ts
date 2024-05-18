@@ -1,46 +1,48 @@
-import { describe, expect, test } from "vitest";
-import { convert } from "./convert";
+import { describe, expect, test } from 'vitest'
+import { convert } from './convert'
 
-describe("convert", () => {
-  test("", async ({ task }) => {
+/* eslint-disable vitest/valid-title, vitest/no-identical-title */
+
+describe('convert', () => {
+  test('', async ({ task }) => {
     expect(await convert(task.name)).toStrictEqual({
       result: task.name,
       isConverted: false,
-    });
-  });
+    })
+  })
 
-  test(" ", async ({ task }) => {
+  test('', async ({ task }) => {
     expect(await convert(task.name)).toStrictEqual({
       result: task.name,
       isConverted: false,
-    });
-  });
+    })
+  })
 
   test(`
     
-  `, async ({ task }) => {
+`, async ({ task }) => {
     expect(await convert(task.name)).toStrictEqual({
       result: task.name,
       isConverted: false,
-    });
-  });
+    })
+  })
 
-  test("feat(*): add something", async ({ task }) => {
+  test('feat(*): add something', async ({ task }) => {
     expect(await convert(task.name)).toStrictEqual({
       result: task.name,
       isConverted: false,
-    });
-  });
+    })
+  })
 
   test(`feat(*): add something
 
 
-  `, async ({ task }) => {
+`, async ({ task }) => {
     expect(await convert(task.name)).toStrictEqual({
       result: task.name,
       isConverted: false,
-    });
-  });
+    })
+  })
 
   test(`feat(*): add something
 
@@ -54,8 +56,8 @@ coauthors: manudeli
 Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
 `,
       isConverted: true,
-    });
-  });
+    })
+  })
 
   test(`feat(*): add something
 
@@ -70,6 +72,6 @@ Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
 Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>
 `,
       isConverted: true,
-    });
-  });
-});
+    })
+  })
+})

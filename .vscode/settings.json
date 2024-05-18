@@ -1,27 +1,14 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
-    "source.fixAll.biome": "explicit"
+    "source.fixAll.eslint": "explicit"
   },
-  "editor.defaultFormatter": "biomejs.biome",
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": { "out": false },
   "search.exclude": { "out": true },
-  "typescript.tsc.autoDetect": "off",
-  "[mdx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "typescript.tsc.autoDetect": "off"
 }

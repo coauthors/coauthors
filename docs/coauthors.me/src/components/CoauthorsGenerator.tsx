@@ -1,142 +1,103 @@
-import { coauthor } from "@coauthors/core";
-import { DevTool } from "@hookform/devtools";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Delay,
-  Suspense,
-  useErrorBoundaryFallbackProps,
-} from "@suspensive/react";
-import {
-  QueryErrorBoundary,
-  SuspenseQuery,
-  queryOptions,
-} from "@suspensive/react-query";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useDebounceCallback, useLocalStorage, useTimeout } from "usehooks-ts";
-import { z } from "zod";
+import { coauthor } from '@coauthors/core'
+import { DevTool } from '@hookform/devtools'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Delay, Suspense, useErrorBoundaryFallbackProps } from '@suspensive/react'
+import { QueryErrorBoundary, SuspenseQuery, queryOptions } from '@suspensive/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { useDebounceCallback, useLocalStorage, useTimeout } from 'usehooks-ts'
+import { z } from 'zod'
 
 const query = {
   coauthor: (...params: Parameters<typeof coauthor>) =>
     queryOptions({
-      queryKey: ["coauthor", ...params] as const,
+      queryKey: ['coauthor', ...params] as const,
       queryFn: () => coauthor(...params),
     }),
-};
+}
 
 const formSchema = z.object({
   user: z.string().min(1),
-});
+})
 
 export const CoauthorsGenerator = () => {
-  const queryClient = useState(
-    () => new QueryClient({ defaultOptions: { queries: { retry: 0 } } }),
-  )[0];
+  const queryClient = useState(() => new QueryClient({ defaultOptions: { queries: { retry: 0 } } }))[0]
 
-  const [authors, setAuthors] = useLocalStorage<
-    Array<z.infer<typeof formSchema> & { name?: string }>
-  >("Coauthors Generator", []);
-  const { register, control, handleSubmit, reset } = useForm<
-    z.infer<typeof formSchema>
-  >({
-    defaultValues: { user: "" },
+  const [authors, setAuthors] = useLocalStorage<Array<z.infer<typeof formSchema> & { name?: string }>>(
+    'Coauthors Generator',
+    []
+  )
+  const { register, control, handleSubmit, reset } = useForm<z.infer<typeof formSchema>>({
+    defaultValues: { user: '' },
     resolver: zodResolver(formSchema),
-  });
+  })
 
   const debouncedSetAuthors = useDebounceCallback(
     ({ user, name }: { user: string; name: string }) =>
-      setAuthors((prev) =>
-        prev.map((author) =>
-          author.user === user ? { ...author, name } : author,
-        ),
-      ),
-    200,
-  );
+      setAuthors((prev) => prev.map((author) => (author.user === user ? { ...author, name } : author))),
+    200
+  )
 
   return (
     <QueryClientProvider client={queryClient}>
       <form
         action="submit"
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit((formData) => {
-          setAuthors((prev) => [
-            ...prev.filter(({ user }) => user !== formData.user),
-            formData,
-          ]);
-          reset();
+          setAuthors((prev) => [...prev.filter(({ user }) => user !== formData.user), formData])
+          reset()
         })}
         className="text-left"
       >
-        <div className="flex items-center w-full">
+        <div className="flex w-full items-center">
           <span className="flex-1">
             <input
-              className="rounded-l-lg w-full py-2 px-4 h-10 bg-[#f9fafb1a]"
+              className="h-10 w-full rounded-l-lg bg-[#f9fafb1a] px-4 py-2"
               id="user"
               type="text"
               placeholder="GitHub Username"
-              {...register("user")}
+              {...register('user')}
               required
             />
           </span>
-          <button
-            className="bg-black rounded-r-lg h-10 px-4 text-white"
-            type="submit"
-          >
+          <button className="h-10 rounded-r-lg bg-black px-4 text-white" type="submit">
             Add
           </button>
         </div>
       </form>
       <br />
       <Delay ms={1}>
-        <section className="flex flex-col gap-3 bg-[#00000040] border-white border-opacity-10 border p-4 rounded-lg">
-          {authors.length === 0 ? (
-            <p className="opacity-60">Add new one as co-author by upper form</p>
-          ) : null}
+        <section className="flex flex-col gap-3 rounded-lg border border-white border-opacity-10 bg-[#00000040] p-4">
+          {authors.length === 0 ? <p className="opacity-60">Add new one as co-author by upper form</p> : null}
           {authors.map(({ name, user }) => (
             <QueryErrorBoundary
               key={user}
               fallback={() => (
                 <ErrorBoundaryFallback
                   username={user}
-                  onRemove={() =>
-                    setAuthors((prev) =>
-                      prev.filter((authors) => authors.user !== user),
-                    )
-                  }
+                  onRemove={() => setAuthors((prev) => prev.filter((authors) => authors.user !== user))}
                 />
               )}
             >
-              <div
-                key={user}
-                className="flex text-left gap-2 flex-col xl:flex-row items-center"
-              >
+              <div key={user} className="flex flex-col items-center gap-2 text-left xl:flex-row">
                 <Suspense fallback="loading...">
                   <SuspenseQuery {...query.coauthor({ user, name })}>
-                    {({ data: coauthor }) => (
-                      <p className="self-start break-all xl:self-auto xl:flex-1">
-                        {coauthor}
-                      </p>
-                    )}
+                    {({ data: coauthor }) => <p className="self-start break-all xl:flex-1 xl:self-auto">{coauthor}</p>}
                   </SuspenseQuery>
                 </Suspense>
-                <div className="flex items-center gap-2 w-full xl:w-auto">
+                <div className="flex w-full items-center gap-2 xl:w-auto">
                   <input
-                    className="rounded-lg bg-[#f9fafb1a] border-black border-opacity-10 border xl:w-[180px] py-2 pl-4 h-10 flex-1 select-none"
+                    className="h-10 flex-1 select-none rounded-lg border border-black border-opacity-10 bg-[#f9fafb1a] py-2 pl-4 xl:w-[180px]"
                     type="text"
-                    onChange={(e) =>
-                      debouncedSetAuthors({ user, name: e.target.value })
-                    }
+                    onChange={(e) => debouncedSetAuthors({ user, name: e.target.value })}
                     placeholder="Custom name"
                   />
                   <button
                     type="button"
-                    onClick={() =>
-                      setAuthors((prev) =>
-                        prev.filter((authors) => authors.user !== user),
-                      )
-                    }
-                    className="select-none w-[50px] h-10 rounded"
+                    onClick={() => setAuthors((prev) => prev.filter((authors) => authors.user !== user))}
+                    className="h-10 w-[50px] select-none rounded"
                   >
                     🗑️
                   </button>
@@ -146,40 +107,28 @@ export const CoauthorsGenerator = () => {
           ))}
         </section>
         {authors.length > 0 ? (
-          <p className="opacity-60 text-center mt-6">
-            ⌨️ Copy & Paste on commit message ⌨️
-          </p>
+          <p className="mt-6 text-center opacity-60">⌨️ Copy & Paste on commit message ⌨️</p>
         ) : null}
         <DevTool control={control} />
       </Delay>
       <ReactQueryDevtools />
     </QueryClientProvider>
-  );
-};
+  )
+}
 
-const ErrorBoundaryFallback = ({
-  username,
-  onRemove,
-}: {
-  username: string;
-  onRemove: () => void;
-}) => {
-  const { error } = useErrorBoundaryFallbackProps();
+const ErrorBoundaryFallback = ({ username, onRemove }: { username: string; onRemove: () => void }) => {
+  const { error } = useErrorBoundaryFallbackProps()
 
   useTimeout(() => {
-    onRemove();
-  }, 1500);
+    onRemove()
+  }, 1500)
 
   return (
     <>
       {username}: {error.message} (This will be disappear after 1.5s)
-      <button
-        type="button"
-        style={{ fontSize: 12, userSelect: "none", marginLeft: 8 }}
-        onClick={onRemove}
-      >
+      <button type="button" style={{ fontSize: 12, userSelect: 'none', marginLeft: 8 }} onClick={onRemove}>
         🗑️
       </button>
     </>
-  );
-};
+  )
+}

@@ -2,7 +2,13 @@
   "name": "coauthors",
   "version": "0.1.0",
   "description": "Make us as co-author easily",
-  "keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
+  "keywords": [
+    "github",
+    "co-authoring",
+    "git",
+    "collaboration",
+    "cli"
+  ],
   "homepage": "https://github.com/coauthors/coauthors",
   "bugs": "https://github.com/coauthors/coauthors/issues",
   "repository": {
@@ -21,6 +27,7 @@
   "scripts": {
     "build": "tsup",
     "ci:attw": "attw --pack",
+    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:publint": "publint --strict",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
@@ -35,6 +42,7 @@
     "commander": "^12.0.0"
   },
   "devDependencies": {
+    "@coauthors/eslint-config-ts": "workspace:*",
     "@coauthors/tsconfig": "workspace:*",
     "@coauthors/tsup": "workspace:*"
   },

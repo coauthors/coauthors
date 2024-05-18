@@ -3,7 +3,10 @@
   "version": "0.0.0-development",
   "private": true,
   "description": "Coauthors Official Websites",
-  "keywords": ["coauthors", "@coauthors/vscode"],
+  "keywords": [
+    "coauthors",
+    "@coauthors/vscode"
+  ],
   "author": {
     "name": "Jonghyeon Ko",
     "email": "manudeli.ko@gmail.com"
@@ -34,8 +37,10 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@coauthors/eslint-config": "workspace:*",
     "@coauthors/tsconfig": "workspace:*",
     "@hookform/devtools": "^4.3.1",
+    "@next/eslint-plugin-next": "^14.2.3",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "autoprefixer": "^10.4.19",

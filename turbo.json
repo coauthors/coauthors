@@ -8,6 +8,9 @@
     "ci:attw": {
       "dependsOn": ["prepack"]
     },
+    "ci:eslint": {
+      "dependsOn": ["prepack"]
+    },
     "ci:publint": {
       "dependsOn": ["prepack"]
     },
