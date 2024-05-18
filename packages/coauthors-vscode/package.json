@@ -1,6 +1,7 @@
 {
+  "publisher": "coauthors",
   "name": "coauthors-vscode",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Make us as Co-author easily",
   "repository": {
@@ -19,6 +20,8 @@
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./.vscode-test && rimraf ./out",
     "compile": "pnpm clean && tsc -p ./",
+    "vsce:package": "pnpm vsce package --no-dependencies",
+    "vsce:publish": "pnpm vsce publish --no-dependencies",
     "test": "pnpm compile && vscode-test",
     "test:watch": "pnpm compile && vscode-test --watch",
     "vscode:prepublish": "pnpm compile",
@@ -40,7 +43,7 @@
     "vscode": "^1.88.0"
   },
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "categories": [
     "Other"
@@ -74,5 +77,6 @@
   "extensionKind": [
     "workspace"
   ],
-  "icon": "resources/icon.png"
+  "icon": "resources/icon.png",
+  "pricing": "Free"
 }

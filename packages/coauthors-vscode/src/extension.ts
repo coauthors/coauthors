@@ -9,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.window.showInformationMessage('Add Coauthors!')
     }),
     vscode.commands.registerCommand('coauthors.site', () => {
-      vscode.env.openExternal(vscode.Uri.parse('https://coauthors.me/docs/generator'))
+      vscode.env.openExternal(vscode.Uri.parse('https://coauthors.me/generator'))
     }),
     new StatusBarItem()
   )
