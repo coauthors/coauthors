@@ -1,1 +1,1 @@
-# coauthors-vscode
+# Coauthors
