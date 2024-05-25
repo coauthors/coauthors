@@ -22,7 +22,7 @@
     "build": "turbo run build",
     "build:watch": "turbo run build:watch --parallel",
     "changeset": "changeset",
-    "changeset:publish": "pnpm prepack && changeset publish",
+    "changeset:publish": "node scripts/tag-extension.mjs && pnpm prepack && changeset publish && pnpm --filter='coauthors-vscode' vsce:publish",
     "changeset:version": "changeset version && pnpm i --lockfile-only",
     "ci:all": "pnpm ci:attw && pnpm ci:eslint && pnpm ci:publint && pnpm ci:sherif && pnpm ci:type && pnpm test && pnpm build",
     "ci:attw": "turbo run ci:attw",

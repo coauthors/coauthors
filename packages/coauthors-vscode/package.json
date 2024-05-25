@@ -18,13 +18,12 @@
     "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./.vscode-test && rimraf ./out",
-    "compile": "pnpm clean && tsc -p ./",
-    "test": "pnpm compile && vscode-test",
-    "test:watch": "pnpm compile && vscode-test --watch",
-    "vsce:package": "pnpm vsce package --no-dependencies",
-    "vsce:publish": "pnpm vsce publish --no-dependencies",
-    "vscode:prepublish": "pnpm compile",
-    "watch": "tsc -watch -p ./"
+    "test": "pnpm clean && tsc -p ./ && vscode-test",
+    "test:watch": "pnpm clean && tsc -p ./ && vscode-test --watch",
+    "vsce:package": "vsce package --no-dependencies",
+    "vsce:publish": "vsce publish --no-dependencies",
+    "vscode:prepublish": "pnpm clean && tsc -p ./",
+    "watch": "pnpm clean && tsc -watch -p ./"
   },
   "dependencies": {
     "@coauthors/core": "workspace:0.1.0"
