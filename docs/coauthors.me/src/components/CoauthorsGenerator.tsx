@@ -3,11 +3,11 @@ import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Delay, Suspense, useErrorBoundaryFallbackProps } from '@suspensive/react'
 import { QueryErrorBoundary, SuspenseQuery, queryOptions } from '@suspensive/react-query'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider, useIsFetching, useQueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useDebounceCallback, useLocalStorage, useTimeout } from 'usehooks-ts'
+import { useCopyToClipboard, useDebounceCallback, useLocalStorage, useTimeout } from 'usehooks-ts'
 import { z } from 'zod'
 
 const query = {
@@ -97,7 +97,7 @@ export const CoauthorsGenerator = () => {
                   <button
                     type="button"
                     onClick={() => setAuthors((prev) => prev.filter((authors) => authors.user !== user))}
-                    className="h-10 w-[50px] select-none rounded"
+                    className="h-10 w-[50px] select-none rounded bg-black"
                   >
                     🗑️
                   </button>
@@ -105,14 +105,44 @@ export const CoauthorsGenerator = () => {
               </div>
             </QueryErrorBoundary>
           ))}
+          {authors.length > 0 ? (
+            <>
+              <CopyButton authors={authors} />
+              <p className="text-center opacity-60">Copy & Paste on commit message</p>
+            </>
+          ) : null}
         </section>
-        {authors.length > 0 ? (
-          <p className="mt-6 text-center opacity-60">⌨️ Copy & Paste on commit message ⌨️</p>
-        ) : null}
         <DevTool control={control} />
       </Delay>
       <ReactQueryDevtools />
     </QueryClientProvider>
+  )
+}
+
+const CopyButton = ({ authors }: { authors: Array<z.infer<typeof formSchema> & { name?: string }> }) => {
+  const [, copy] = useCopyToClipboard()
+  const isFetching = useIsFetching()
+  const queryClient = useQueryClient()
+
+  const textToText = authors
+    .map((author) => queryClient.getQueryData(query.coauthor(author).queryKey))
+    .map((coAuthoredString) => `\n${coAuthoredString}`)
+    .join('')
+
+  return (
+    <button
+      type="button"
+      disabled={!!isFetching || !textToText}
+      onClick={() => {
+        copy(textToText).then(() => {
+          alert(`📋 Coauthors: Copied!
+${textToText}`)
+        })
+      }}
+      className="h-10 select-none rounded bg-black"
+    >
+      {isFetching || !textToText ? 'loading...' : textToText ? '📋 Copy all' : null}
+    </button>
   )
 }
 
