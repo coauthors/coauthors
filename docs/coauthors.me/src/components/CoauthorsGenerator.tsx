@@ -105,14 +105,12 @@ export const CoauthorsGenerator = () => {
               </div>
             </QueryErrorBoundary>
           ))}
-      {authors.length > 0 ? (
-        <>
-          <CopyButton authors={authors} />
-          <p className="text-center opacity-60">
-            ⌨️ Copy & Paste on commit message ⌨️
-          </p>
-        </>
-      ) : null}
+          {authors.length > 0 ? (
+            <>
+              <CopyButton authors={authors} />
+              <p className="text-center opacity-60">Copy & Paste on commit message</p>
+            </>
+          ) : null}
         </section>
         <DevTool control={control} />
       </Delay>
