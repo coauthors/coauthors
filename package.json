@@ -31,7 +31,7 @@
     "ci:sherif": "sherif",
     "ci:type": "turbo run ci:type",
     "clean": "turbo run clean",
-    "coauthors": "pnpm --filter=coauthors prepack && node packages/coauthors/dist/index.js",
+    "coauthors": "node -e \"if(process.env.CI == 'true') {console.log('Script will not run in CI environment.')} else {require('child_process').execSync('pnpm --filter=coauthors prepack && node packages/coauthors/dist/index.js', {stdio: 'inherit'})}\"",
     "dev": "turbo run dev",
     "extension:compile": "pnpm --filter='coauthors-vscode' compile",
     "format": "prettier --write \"**/*.{ts,tsx,md,js,cjs,mjs}\"",

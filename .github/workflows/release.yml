@@ -16,10 +16,11 @@ jobs:
         uses: changesets/action@v1
         with:
           title: 'chore: version packages'
-          commit: 'chore: version packages [skip-ci]'
+          commit: 'chore: version packages'
           version: pnpm changeset:version
           publish: pnpm changeset:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          CI: true
