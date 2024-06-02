@@ -1,6 +1,6 @@
 {
   "name": "coauthors-vscode",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "private": true,
   "description": "Easier to share ideas",
   "repository": {
@@ -26,7 +26,7 @@
     "watch": "pnpm clean && tsc -watch -p ./"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.1.0"
+    "@coauthors/core": "workspace:0.1.1"
   },
   "devDependencies": {
     "@coauthors/eslint-config-ts": "workspace:*",
