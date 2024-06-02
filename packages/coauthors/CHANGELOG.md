@@ -1,5 +1,12 @@
 # coauthors
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @coauthors/core@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.1
+
+### Patch Changes
+
+- [#56](https://github.com/coauthors/coauthors/pull/56) [`b4a5959`](https://github.com/coauthors/coauthors/commit/b4a595987bbb0bdae96d15bfdf4bdb3842f755be) Thanks [@manudeli](https://github.com/manudeli)! - chore(vscode): auto release
+
+- Updated dependencies []:
+  - @coauthors/core@0.1.1
+
 ## 0.1.0
 
 ### Patch Changes
