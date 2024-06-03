@@ -21,7 +21,7 @@
     "test": "pnpm clean && tsc -p ./ && vscode-test",
     "test:watch": "pnpm clean && tsc -p ./ && vscode-test --watch",
     "vsce:package": "vsce package --no-dependencies",
-    "vsce:publish": "vsce publish --no-dependencies",
+    "vsce:publish": "vsce publish --no-dependencies; true",
     "vscode:prepublish": "pnpm clean && tsc -p ./",
     "watch": "pnpm clean && tsc -watch -p ./"
   },
