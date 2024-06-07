@@ -10,12 +10,15 @@ concurrency:
 jobs:
   quality:
     name: Check quality
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        command: ['ci:eslint']
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/pnpm-setup-node
       - run: pnpm install --frozen-lockfile
-      - run: pnpm ci:eslint || exit 1
+      - run: pnpm ${{ matrix.command }} || exit 1
       - if: failure()
         uses: actions/github-script@v7
         with:
