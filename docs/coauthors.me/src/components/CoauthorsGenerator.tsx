@@ -119,6 +119,12 @@ export const CoauthorsGenerator = () => {
   )
 }
 
+
+
+
+
+
+
 const CopyButton = ({ authors }: { authors: Array<z.infer<typeof formSchema> & { name?: string }> }) => {
   const [, copy] = useCopyToClipboard()
   const isFetching = useIsFetching()
