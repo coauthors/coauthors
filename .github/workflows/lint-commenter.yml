@@ -1,0 +1,26 @@
+name: Lint Commenter
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Check quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup-node
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm ci:eslint || exit 1
+      - if: failure()
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            ## Eslint Check Failed
+            Check ${{ github.sha }}. Please run `pnpm ci:eslint -- --fix` to fix eslint error.
