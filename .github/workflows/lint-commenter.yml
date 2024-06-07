@@ -27,5 +27,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Check ${{ github.sha }}. Please run `pnpm ci:eslint -- --fix` to fix eslint error".
+              body: "Check ${{ github.sha }}. Please run `pnpm ci:eslint -- --fix` to fix eslint error."
             })
