@@ -4,13 +4,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   lint-commenter:
-    name: Lint Commenter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
