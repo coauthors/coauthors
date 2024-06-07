@@ -14,6 +14,7 @@
   "type": "commonjs",
   "scripts": {
     "build": "next build",
+    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:type": "tsc --noEmit",
     "dev": "next dev -p 4000",
     "start": "next start -p 4000"
