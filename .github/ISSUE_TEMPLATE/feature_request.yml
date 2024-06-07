@@ -1,7 +1,7 @@
 name: Feature Request
 description: Suggest an idea
 labels: [feature]
-title: "[Feature]:"
+title: '[Feature]:'
 body:
   - type: dropdown
     id: package
@@ -10,9 +10,9 @@ body:
       description: Is this issue related to a specific package?
       multiple: true
       options:
-        - "coauthors"
-        - "coauthors-vscode"
-        - "@coauthors/core"
+        - 'coauthors'
+        - 'coauthors-vscode'
+        - '@coauthors/core'
         - etc
     validations:
       required: true

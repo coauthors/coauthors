@@ -39,6 +39,8 @@
     "packlint": "packlint sort -R",
     "preinstall": "corepack enable",
     "prepack": "turbo run prepack",
+    "prettier": "prettier --ignore-unknown '**/*'",
+    "prettier:write": "pnpm run prettier --write",
     "prepare": "husky",
     "start": "turbo run start",
     "test": "turbo run test",

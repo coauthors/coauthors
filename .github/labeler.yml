@@ -1,15 +1,15 @@
-"coauthors":
+'coauthors':
   - changed-files:
-      - any-glob-to-any-file: ["packages/coauthors/**/*"]
-"coauthors-vscode":
+      - any-glob-to-any-file: ['packages/coauthors/**/*']
+'coauthors-vscode':
   - changed-files:
-      - any-glob-to-any-file: ["packages/coauthors-vscode/**/*"]
-"@coauthors/core":
+      - any-glob-to-any-file: ['packages/coauthors-vscode/**/*']
+'@coauthors/core':
   - changed-files:
-      - any-glob-to-any-file: ["packages/core/**/*"]
-"coauthors.me":
+      - any-glob-to-any-file: ['packages/core/**/*']
+'coauthors.me':
   - changed-files:
-      - any-glob-to-any-file: ["docs/coauthors.me/**/*"]
-"dependencies":
+      - any-glob-to-any-file: ['docs/coauthors.me/**/*']
+'dependencies':
   - changed-files:
-      - any-glob-to-any-file: ["pnpm-lock.yaml"]
+      - any-glob-to-any-file: ['pnpm-lock.yaml']

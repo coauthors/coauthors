@@ -1,7 +1,7 @@
 name: Bug Report
 description: Report a bug
 labels: [bug]
-title: "[Bug]:"
+title: '[Bug]:'
 body:
   - type: dropdown
     id: package
@@ -10,9 +10,9 @@ body:
       description: Is this issue related to a specific package?
       multiple: true
       options:
-        - "coauthors"
-        - "coauthors-vscode"
-        - "@coauthors/core"
+        - 'coauthors'
+        - 'coauthors-vscode'
+        - '@coauthors/core'
         - etc
     validations:
       required: true

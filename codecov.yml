@@ -7,22 +7,22 @@ coverage:
         threshold: 60%
 
 comment:
-  layout: "header, reach, diff, flags, components"
+  layout: 'header, reach, diff, flags, components'
 
 ignore:
-  - "**/*.test-d.*"
+  - '**/*.test-d.*'
 
 component_management:
   individual_components:
     - component_id: coauthors
-      name: "coauthors"
+      name: 'coauthors'
       paths:
         - packages/coauthors/**
     - component_id: core
-      name: "@coauthors/core"
+      name: '@coauthors/core'
       paths:
         - packages/core/**
     - component_id: coauthors-vscode
-      name: "coauthors-vscode"
+      name: 'coauthors-vscode'
       paths:
         - packages/coauthors-vscode/**
