@@ -21,7 +21,5 @@ jobs:
       - if: failure()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          message: |
-            ## Eslint Check Failed
-            Check ${{ github.sha }}. Please run `pnpm ci:eslint -- --fix` to fix eslint error.
+          message: Check ${{ github.sha }}. Please run `pnpm ci:eslint -- --fix` to fix eslint error.
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
