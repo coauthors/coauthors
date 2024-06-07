@@ -1,17 +1,15 @@
 name: Lint Commenter
 
 on:
-  push:
-    branches: [main]
-  pull_request_target:
-    types: [opened, synchronize, reopened]
+  - pull_request_target
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  quality:
-    name: Check quality
+  lint-commenter:
+    name: Lint Commenter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
