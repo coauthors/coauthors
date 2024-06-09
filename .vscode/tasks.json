@@ -3,11 +3,13 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "extension:compile",
+      "script": "dev",
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "isBackground": true,
+      "problemMatcher": ["$ts-checker-webpack-watch", "$ts-checker-eslint-webpack-watch"]
     }
   ]
 }
