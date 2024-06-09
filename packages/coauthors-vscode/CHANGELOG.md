@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.2.0
+
+### Minor Changes
+
+- [#66](https://github.com/coauthors/coauthors/pull/66) [`1c8e397`](https://github.com/coauthors/coauthors/commit/1c8e39709b56c2b0635bd94d203758af54728b31) Thanks [@manudeli](https://github.com/manudeli)! - feat(coauthors-vscode): add button to use Coauthors on VSCode Source Control
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @coauthors/core@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes
