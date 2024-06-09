@@ -1,5 +1,5 @@
 ---
-"coauthors-vscode": minor
+'coauthors-vscode': minor
 ---
 
-feat(coauthors-vscode): add Coauthors icon on Source Control Manager
+feat(coauthors-vscode): add button to use Coauthors on VSCode Source Control
