@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.2.2
+
+### Patch Changes
+
+- fix(vscode): migrate tsc to esbuild
+
+- Updated dependencies []:
+  - @coauthors/core@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

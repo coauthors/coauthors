@@ -1,6 +1,6 @@
 {
   "name": "coauthors-vscode",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "description": "Easier to share ideas",
   "repository": {
@@ -18,16 +18,16 @@
     "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./.vscode-test && rimraf ./out",
-    "compile": "tsc -p ./",
-    "test": "pnpm clean && tsc -p ./ && vscode-test",
-    "test:watch": "pnpm clean && tsc -p ./ && vscode-test --watch",
+    "compile": "pnpm ci:type && node esbuild.js",
+    "test": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test",
+    "test:watch": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test --watch",
     "vsce:package": "vsce package --no-dependencies",
     "vsce:publish": "vsce publish --no-dependencies; true",
-    "vscode:prepublish": "pnpm clean && tsc -p ./",
-    "dev": "pnpm clean && tsc -watch -p ./"
+    "vscode:prepublish": "pnpm clean && pnpm ci:type && node esbuild.js",
+    "dev": "pnpm clean && pnpm ci:type && node esbuild.js --watch"
   },
   "dependencies": {
-    "@coauthors/core": "0.2.1"
+    "@coauthors/core": "workspace:0.2.2"
   },
   "devDependencies": {
     "@coauthors/eslint-config-ts": "workspace:*",
@@ -36,7 +36,8 @@
     "@types/vscode": "^1.88.0",
     "@vscode/test-cli": "^0.0.8",
     "@vscode/test-electron": "^2.3.9",
-    "@vscode/vsce": "^2.26.1"
+    "@vscode/vsce": "^2.26.1",
+    "esbuild": "^0.21.4"
   },
   "engines": {
     "vscode": "^1.88.0"
