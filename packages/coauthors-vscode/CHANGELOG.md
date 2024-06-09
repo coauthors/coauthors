@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- fix(vscode): try to use monorepo library
+
+- Updated dependencies []:
+  - @coauthors/core@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
