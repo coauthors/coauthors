@@ -231,7 +231,7 @@ importers:
   packages/coauthors:
     dependencies:
       '@coauthors/core':
-        specifier: workspace:0.1.1
+        specifier: workspace:0.2.0
         version: link:../core
       '@commander-js/extra-typings':
         specifier: ^12.0.1
@@ -253,7 +253,7 @@ importers:
   packages/coauthors-vscode:
     dependencies:
       '@coauthors/core':
-        specifier: workspace:0.1.1
+        specifier: workspace:0.2.0
         version: link:../core
     devDependencies:
       '@coauthors/eslint-config-ts':
