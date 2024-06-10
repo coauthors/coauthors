@@ -1,46 +1,65 @@
 import { Steps } from 'nextra/components'
 import { Callout } from '../components'
+import Image from 'next/image'
 
-# Easier to share ideas
+# Easier to share ideas 🌴
 
-We leave tons of commits every day. And among these commits, there are many commits that were created based on ideas given to me by colleagues. In fact, good ideas are not code, but are written into code through discussion with many people and then committed.
+<div class="py-4 pt-8 text-xl">
+    "We leave tons of commits every day. among these commits, <b>there are many commits that were created based on ideas given to me by colleagues.</b> In fact, good ideas are not
+    code, but are written into code through discussion with many people and then committed."
 
-<Steps>
+</div>
 
-### Co-Authoring can motivate idea givers
-
-![Example](/img/coauthor-example.png)
+## Idea givers can be motivated by `Co-Authoring`
 
 There is a way to add idea giver as Co-Author of a commit in GitHub. Co-Authoring can motivate idea givers. At least it makes them feel good.
 
-<Callout>
+<Callout type='info'>
 
 [GitHub | Creating a commit with multiple authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors)
 
+![Example](/img/coauthor-example.png)
+
 </Callout>
+
+### 🥲 Problem: Difficulties with `Co-Authoring`
 
 But In our opinion, it's quite hard to make idea givers as Co-Author in commit message
 
-### Difficulties with Co-Authoring
+<Steps>
 
-1. You must know exactly the grammar provided by GitHub. Spacing, text order, capitalization, etc. must be written accurately.
+### Too complicated grammar 📚
 
-   ```shell /Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>/ /Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>/
-   git commit -m "feat: add some feature
+```shell /Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>/ /Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>/
+git commit -m "feat: add some feature
 
-   Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
-   Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>"
-   ```
+Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>"
+```
 
-2. The email must be registered in the other person's GitHub account. in addition, there is a high possibility that the email will not appear in the other person's GitHub profile.
+You must know exactly the grammar provided by GitHub. Spacing, text order, capitalization, etc. must be written accurately.
 
-3. If you want the email to follow the format below, you need to know username and the numeric ID of Co-Author's GitHub account.
+### High possibility to fail finding public email 📧
 
-   ```text /61593290/ /manudeli/
-   61593290+manudeli@users.noreply.github.com
-   ```
+The email must be registered in the other person's GitHub account. in addition, there is a high possibility that the email will not appear in the other person's GitHub profile.
 
-### But, with Coauthors, only GitHub username is enough
+### Number of GitHub id should be required 🤖
+
+```text /61593290/ /manudeli/
+61593290+manudeli@users.noreply.github.com
+```
+
+If you want the email to follow the format below, you need to know username and the numeric ID of Co-Author's GitHub account.
+
+   </Steps>
+
+## Coauthors: GitHub username only! 🎉
+
+We provide 3 ways to make it easier to add idea givers as Co-Author in commit message.
+
+<Steps>
+
+### Coauthors with Git hook (husky) ⚡
 
 ```shell /coauthors: manudeli, 2-NOW/
 git commit -m "Refactor usability tests.
@@ -48,12 +67,26 @@ git commit -m "Refactor usability tests.
 coauthors: manudeli, 2-NOW" // Commit message will be converted automatically
 ```
 
-Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message.
+Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message. [Setup →](/git-hook)
+
+### Coauthors VSCode Extension 💻
+
+![Example](/img/vscode-example.gif)
+
+We provide a simple VSCode extension that allows you to enter a GitHub username and create a commit message. [VSCode Marketplace →](https://marketplace.visualstudio.com/items?itemName=coauthors.coauthors-vscode)
+
+### Coauthors Generator 🌐
+
+![Example](/img/generator-example.gif)
+
+We provide a simple web page that allows you to enter a GitHub username and create a commit message.
+
+Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message. [Coauthors Generator →](/generator)
 
 </Steps>
 
-## Then, Make idea giver as Co-Author easily! 🎉
+## Make idea giver as Co-Author easily with Coauthors!
 
-Setting up our tool is very simple. This type of Co-Authoring is possible simply by adding a very simple script such as `npx coauthors`.
+Setting up our tool is very simple. This type of Co-Authoring is possible simply by adding a very simple as `npx coauthors` or `Generator` Site or `VSCode Extension`.
 
 Bring better ideas to life with easier Co-Authoring

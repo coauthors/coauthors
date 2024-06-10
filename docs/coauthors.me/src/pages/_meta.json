@@ -16,7 +16,7 @@
   },
   "git-hook": "Git Hook with Husky",
   "generator": "Generator",
-  "vscode": "VSCode Extension (WIP)",
+  "vscode": "VSCode Extension",
   "---": {
     "type": "separator"
   },
