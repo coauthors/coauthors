@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withNextra = require('nextra')({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
@@ -6,12 +7,11 @@ const withNextra = require('nextra')({
 
 /** @type {import('next').NextConfig} */
 module.exports = withNextra({
-  async redirects() {
+  rewrites() {
     return [
       {
         source: '/',
         destination: '/why',
-        permanent: true,
       },
     ]
   },

@@ -2,12 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Extension",
+      "name": "Watch & Run",
       "type": "extensionHost",
       "request": "launch",
-      "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/vscode"],
-      "outFiles": ["${workspaceFolder}/packages/vscode/out/**/*.js"],
-      "preLaunchTask": "${defaultBuildTask}"
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/coauthors-vscode"],
+      "outFiles": ["${workspaceFolder}/packages/coauthors-vscode/out/**/*.js"],
+      "preLaunchTask": "${defaultBuildTask}",
+      "trace": true
     }
   ]
 }

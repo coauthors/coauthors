@@ -49,3 +49,4 @@ dist
 
 # VSCode
 .vscode-test
+coauthors-vscode-*.vsix

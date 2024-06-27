@@ -1,11 +1,11 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-export type Author = z.infer<typeof authorSchema>;
+export type Author = z.infer<typeof authorSchema>
 
 export const authorSchema = z.object({
   user: z.string().min(1),
   name: z.string().optional(),
-});
+})
 
 export const githubUserSchema = z.object({
   login: z.string(),
@@ -40,4 +40,4 @@ export const githubUserSchema = z.object({
   following: z.number().int(),
   created_at: z.string().datetime(),
   updated_at: z.string().datetime(),
-});
+})

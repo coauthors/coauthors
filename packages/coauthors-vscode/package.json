@@ -1,0 +1,83 @@
+{
+  "name": "coauthors-vscode",
+  "version": "0.2.2",
+  "private": true,
+  "description": "Easier to share ideas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coauthors/coauthors.git",
+    "directory": "packages/coauthors-vscode"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jonghyeon Ko",
+    "email": "manudeli.ko@gmail.com"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
+    "ci:type": "tsc --noEmit",
+    "clean": "rimraf ./.vscode-test && rimraf ./out",
+    "compile": "pnpm ci:type && node esbuild.js",
+    "test": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test",
+    "test:watch": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test --watch",
+    "vsce:package": "vsce package --no-dependencies",
+    "vsce:publish": "vsce publish --no-dependencies; true",
+    "vscode:prepublish": "pnpm clean && pnpm ci:type && node esbuild.js",
+    "dev": "pnpm clean && pnpm ci:type && node esbuild.js --watch"
+  },
+  "dependencies": {
+    "@coauthors/core": "workspace:0.2.2"
+  },
+  "devDependencies": {
+    "@coauthors/eslint-config-ts": "workspace:*",
+    "@coauthors/tsconfig": "workspace:*",
+    "@types/mocha": "^10.0.6",
+    "@types/vscode": "^1.88.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.26.1",
+    "esbuild": "^0.21.4"
+  },
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "category": "Coauthors",
+        "command": "coauthors.add",
+        "title": "Add Coauthors",
+        "icon": {
+          "light": "resources/cmd-icon-light.svg",
+          "dark": "resources/cmd-icon-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "coauthors.add",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ]
+    }
+  },
+  "displayName": "Coauthors",
+  "extensionKind": [
+    "workspace"
+  ],
+  "icon": "resources/icon.png",
+  "pricing": "Free",
+  "publisher": "coauthors",
+  "sponsor": {
+    "url": "https://github.com/sponsors/manudeli"
+  }
+}

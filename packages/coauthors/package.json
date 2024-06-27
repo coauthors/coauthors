@@ -1,8 +1,14 @@
 {
   "name": "coauthors",
-  "version": "0.0.4",
-  "description": "Make us as co-author easily",
-  "keywords": ["github", "co-authoring", "git", "collaboration", "cli"],
+  "version": "0.2.2",
+  "description": "Easier to share ideas",
+  "keywords": [
+    "github",
+    "co-authoring",
+    "git",
+    "collaboration",
+    "cli"
+  ],
   "homepage": "https://github.com/coauthors/coauthors",
   "bugs": "https://github.com/coauthors/coauthors/issues",
   "repository": {
@@ -21,18 +27,22 @@
   "scripts": {
     "build": "tsup",
     "ci:attw": "attw --pack",
+    "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:publint": "publint --strict",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
+    "dev": "tsup --watch",
     "prepack": "pnpm build",
-    "start": "node dist/index.js"
+    "test": "vitest run --coverage --typecheck",
+    "test:watch": "vitest --ui --coverage --typecheck"
   },
   "dependencies": {
-    "@coauthors/core": "workspace:0.0.4",
+    "@coauthors/core": "workspace:0.2.2",
     "@commander-js/extra-typings": "^12.0.1",
     "commander": "^12.0.0"
   },
   "devDependencies": {
+    "@coauthors/eslint-config-ts": "workspace:*",
     "@coauthors/tsconfig": "workspace:*",
     "@coauthors/tsup": "workspace:*"
   },

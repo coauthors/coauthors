@@ -1,12 +1,12 @@
 "coauthors":
   - changed-files:
       - any-glob-to-any-file: ["packages/coauthors/**/*"]
+"coauthors-vscode":
+  - changed-files:
+      - any-glob-to-any-file: ["packages/coauthors-vscode/**/*"]
 "@coauthors/core":
   - changed-files:
       - any-glob-to-any-file: ["packages/core/**/*"]
-"@coauthors/vscode":
-  - changed-files:
-      - any-glob-to-any-file: ["packages/vscode/**/*"]
 "coauthors.me":
   - changed-files:
       - any-glob-to-any-file: ["docs/coauthors.me/**/*"]
