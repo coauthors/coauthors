@@ -1,0 +1,43 @@
+{
+  "name": "coauthors-bot",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Easier to share ideas",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "homepage": "https://coauthors.me",
+  "bugs": "https://github.com/coauthors/coauthors/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coauthors/coauthors.git",
+    "directory": "packages/coauthors-bot"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jonghyeon Ko",
+    "email": "manudeli.ko@gmail.com"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "ci:test": "vitest run --coverage --typecheck",
+    "ci:test:watch": "vitest --ui --coverage --typecheck",
+    "start": "probot run ./lib/index.js"
+  },
+  "dependencies": {
+    "probot": "^13.0.1"
+  },
+  "devDependencies": {
+    "@coauthors/eslint-config-ts": "workspace:*",
+    "@coauthors/tsconfig": "workspace:*",
+    "nock": "^14.0.0-beta.5",
+    "smee-client": "^2.0.0"
+  },
+  "engines": {
+    "node": ">= 18"
+  }
+}

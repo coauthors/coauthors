@@ -14,12 +14,14 @@ build
 # misc
 .DS_Store
 *.pem
+!mock-cert.pem
 
 # debug
 npm-debug.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -31,6 +33,7 @@ npm-debug.log*
 # for build
 dist
 esm
+lib
 
 # graph
 graph/

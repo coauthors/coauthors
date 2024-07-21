@@ -9,7 +9,7 @@
     "collaboration",
     "cli"
   ],
-  "homepage": "https://github.com/coauthors/coauthors",
+  "homepage": "https://coauthors.me",
   "bugs": "https://github.com/coauthors/coauthors/issues",
   "repository": {
     "type": "git",
@@ -29,12 +29,12 @@
     "ci:attw": "attw --pack",
     "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
     "ci:publint": "publint --strict",
+    "ci:test": "vitest run --coverage --typecheck",
+    "ci:test:watch": "vitest --ui --coverage --typecheck",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./dist && rimraf ./coverage",
     "dev": "tsup --watch",
-    "prepack": "pnpm build",
-    "test": "vitest run --coverage --typecheck",
-    "test:watch": "vitest --ui --coverage --typecheck"
+    "prepack": "pnpm build"
   },
   "dependencies": {
     "@coauthors/core": "workspace:0.2.2",

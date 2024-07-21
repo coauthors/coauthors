@@ -29,6 +29,8 @@
     "ci:eslint": "turbo run ci:eslint",
     "ci:publint": "turbo run ci:publint",
     "ci:sherif": "sherif",
+    "ci:test": "turbo run ci:test",
+    "ci:test:watch": "turbo run ci:test:watch --parallel",
     "ci:type": "turbo run ci:type",
     "clean": "turbo run clean",
     "coauthors": "node -e \"if(process.env.CI == 'true') {console.log('Script will not run in CI environment.')} else {require('child_process').execSync('pnpm turbo --filter=coauthors prepack && node packages/coauthors/dist/index.js', {stdio: 'inherit'})}\"",
@@ -40,9 +42,7 @@
     "preinstall": "corepack enable",
     "prepack": "turbo run prepack",
     "prepare": "husky",
-    "start": "turbo run start",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch --parallel"
+    "start": "turbo run start"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.3",
@@ -50,6 +50,7 @@
     "@changesets/cli": "^2.27.1",
     "@types/node": "^20.12.7",
     "@vitest/coverage-istanbul": "^1.5.0",
+    "@vitest/coverage-v8": "^1.5.0",
     "@vitest/ui": "^1.5.0",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",

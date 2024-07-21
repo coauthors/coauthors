@@ -16,15 +16,15 @@
   "main": "./out/extension.js",
   "scripts": {
     "ci:eslint": "eslint \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}\"",
+    "ci:test": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test",
+    "ci:test:watch": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test --watch",
     "ci:type": "tsc --noEmit",
     "clean": "rimraf ./.vscode-test && rimraf ./out",
     "compile": "pnpm ci:type && node esbuild.js",
-    "test": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test",
-    "test:watch": "pnpm clean && pnpm ci:type && node esbuild.js && vscode-test --watch",
+    "dev": "pnpm clean && pnpm ci:type && node esbuild.js --watch",
     "vsce:package": "vsce package --no-dependencies",
     "vsce:publish": "vsce publish --no-dependencies; true",
-    "vscode:prepublish": "pnpm clean && pnpm ci:type && node esbuild.js",
-    "dev": "pnpm clean && pnpm ci:type && node esbuild.js --watch"
+    "vscode:prepublish": "pnpm clean && pnpm ci:type && node esbuild.js"
   },
   "dependencies": {
     "@coauthors/core": "workspace:0.2.2"
