@@ -26,7 +26,7 @@
     "build": "tsc",
     "ci:test": "vitest run --coverage --typecheck",
     "ci:test:watch": "vitest --ui --coverage --typecheck",
-    "start": "probot run ./lib/index.js"
+    "start": "probot run ./dist/index.js"
   },
   "dependencies": {
     "probot": "^13.0.1"

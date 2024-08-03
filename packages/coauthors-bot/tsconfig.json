@@ -5,7 +5,7 @@
     "module": "Node16",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
 
     /* Strict Type-Checking Options */
     "strict": true,
@@ -20,6 +20,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/", "test/", "./.eslintrc.cjs"],
+  "include": ["src/", "./.eslintrc.cjs"],
+  "exclude": ["node_modules", "*.test.*", "*.spec.*", "*.test-d.*"],
   "compileOnSave": false
 }
