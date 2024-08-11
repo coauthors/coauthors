@@ -255,6 +255,9 @@ importers:
 
   packages/coauthors-bot:
     dependencies:
+      markdown-table:
+        specifier: ^3.0.3
+        version: 3.0.3
       probot:
         specifier: ^13.0.1
         version: 13.3.6

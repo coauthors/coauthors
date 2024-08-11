@@ -30,6 +30,7 @@
     "start": "probot run ./dist/index.js"
   },
   "dependencies": {
+    "markdown-table": "^3.0.3",
     "probot": "^13.0.1"
   },
   "devDependencies": {
