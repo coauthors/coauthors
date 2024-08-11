@@ -7,6 +7,9 @@
 
 <div align="center">
 
+
+
+
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&color=000&labelColor=000)](https://github.com/coauthors/coauthors/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/@coauthors/core?color=000&labelColor=000&logo=npm&label=&style=for-the-badge)](https://www.npmjs.com/package/@coauthors/core) [![npm](https://img.shields.io/npm/dm/@coauthors/core?color=000&labelColor=000&style=for-the-badge)](https://www.npmjs.com/package/@coauthors/core)
 
 [![Coauthors friendly](https://img.shields.io/badge/Coauthors-friendly-blue.svg)](http://coauthors.me) [![codecov](https://codecov.io/gh/coauthors/coauthors/branch/main/graph/badge.svg?token=H4VQ71NJ16)](https://codecov.io/gh/coauthors/coauthors) ![GitHub stars](https://img.shields.io/github/stars/coauthors/coauthors?style=social) ![GitHub forks](https://img.shields.io/github/forks/coauthors/coauthors?style=social)
