@@ -1,9 +1,9 @@
 import { markdownTable } from 'markdown-table'
 import type { Probot } from 'probot'
 
-export default (app: Probot) => {
-  console.log('Yay, the app was loaded!')
+const truncate = (str: string, num: number): string => (str.length > num ? str.slice(0, num) + '...' : str)
 
+export default (app: Probot) => {
   app.on(
     ['pull_request.opened', 'pull_request.synchronize', 'pull_request_review', 'issue_comment'],
     async (context) => {
@@ -21,18 +21,47 @@ export default (app: Probot) => {
         const issueNumber =
           context.name === 'issue_comment' ? context.payload.issue.number : context.payload.pull_request.number
 
-        const comment = await context.octokit.issues
-          .listComments({ ...repo, issue_number: issueNumber })
-          .then((comments) => comments.data.find((comment) => comment.user?.login === 'coauthors[bot]') ?? null)
+        const prReviews = (await context.octokit.pulls.listReviews({ ...repo, pull_number: issueNumber })).data
+        const commentsForReview = (
+          await Promise.all(
+            prReviews.map((review) =>
+              context.octokit.pulls.listCommentsForReview({ ...repo, pull_number: issueNumber, review_id: review.id })
+            )
+          )
+        ).flatMap((comments) => comments.data)
 
-        const table = markdownTable([
-          ['Candidate', 'Reason', 'Action'],
-          [
-            '@manudeli',
-            'comment this',
-            '[Click here to add this person as co-author](https://coauthors.me/generator?username=manudeli)',
-          ],
-        ])
+        const comments = (await context.octokit.issues.listComments({ ...repo, issue_number: issueNumber })).data
+        const coauthorsCommentAlready = comments.find((comment) => comment.user?.login === 'coauthors[bot]') ?? null
+        const userComments = [
+          ...comments.map((comment) => ({ type: 'comment', comment }) as const),
+          ...commentsForReview.map((comment) => ({ type: 'comment for review', comment }) as const),
+          ...prReviews.map((comment) => ({ type: 'review', comment }) as const),
+        ].filter(({ comment }) => comment.user?.login.endsWith('[bot]') === false)
+
+        const tableBody = Object.entries(
+          userComments.reduce<Record<string, typeof userComments>>(
+            (acc, cur) =>
+              cur.comment.user == null
+                ? acc
+                : { ...acc, [cur.comment.user.login]: [...(acc[cur.comment.user.login] ?? []), cur] },
+            {}
+          )
+        ).map(
+          ([username, comments]) =>
+            [
+              `@${username}`,
+              comments
+                .map(
+                  ({ type, comment }) =>
+                    `[${comment.body ? `${truncate(comment.body, 30)}(${type})` : 'this comment'}](${comment.html_url})`
+                )
+                .join(', '),
+              `${comments.length}`,
+              `[Click here to add this person as co-author](https://coauthors.me/generator?username=${username})`,
+            ] as const
+        )
+
+        const table = markdownTable([['Candidate', 'Reasons', 'Count', 'Action'], ...tableBody], { padding: false })
 
         const prComment = {
           ...repo,
@@ -42,8 +71,8 @@ export default (app: Probot) => {
 ${table}`,
         }
 
-        if (comment?.id != null) {
-          return context.octokit.issues.updateComment({ ...prComment, comment_id: comment.id })
+        if (coauthorsCommentAlready?.id != null) {
+          return context.octokit.issues.updateComment({ ...prComment, comment_id: coauthorsCommentAlready.id })
         }
         return context.octokit.issues.createComment(prComment)
       } catch (err) {
@@ -52,43 +81,6 @@ ${table}`,
       }
     }
   )
-
-  app.on('issues.opened', async (context) => {
-    const issueComment = context.issue({
-      body: 'Thanks for opening this issue!',
-    })
-    await context.octokit.issues.createComment(issueComment)
-  })
-
-  //   app.on('issues.opened', async (context) => {
-  //     await context.octokit.issues.createComment({
-  //       issue_number: 81,
-  //       body: `**Coauthors bot🤖 is ready to add below people as co-author:**
-  // | Name | Reasons | Actions |
-  // | :--- | :----- | :------- |
-  // | @manudeli | https://github.com/coauthors/coauthors/issues/81#issuecomment-2271790698 | [Click here to add this person as co-author](https://coauthors.me/generator?username=manudeli) |
-  // | @2-NOW | https://github.com/coauthors/coauthors/issues/81#issuecomment-2271790698 | [Click here to add this person as co-author](https://coauthors.me/generator?username=2-NOW) |
-  // `,
-  //       owner: 'coauthors',
-  //       repo: 'coauthors',
-  //     })
-  //   })
-
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
-
-  app.on('installation', async (context) => {
-    console.log({ event: 'installation', context })
-    await context.octokit.issues.createComment({
-      issue_number: 81,
-      body: 'Thanks for installing me!',
-      owner: 'coauthors',
-      repo: 'coauthors',
-    })
-  })
 
   app.onAny((context) => {
     app.log.info({ event: context.name })
