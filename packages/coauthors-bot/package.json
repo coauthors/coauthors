@@ -30,6 +30,7 @@
     "ci:test": "vitest run --coverage --typecheck",
     "ci:test:watch": "vitest --ui --coverage --typecheck",
     "dev": "nodemon",
+    "prepack": "pnpm build",
     "start": "probot run ./dist/index.js"
   },
   "dependencies": {
