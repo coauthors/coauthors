@@ -1,10 +1,13 @@
 import { defineConfig } from 'vitest/config'
+import packageJson from './package.json'
 
 export default defineConfig({
   test: {
-    include: ['test/**/*.test.ts'],
+    name: packageJson.name,
+    dir: './src',
+    globals: true,
     coverage: {
-      provider: 'v8',
+      provider: 'istanbul',
     },
   },
 })
