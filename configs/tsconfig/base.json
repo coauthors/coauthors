@@ -15,6 +15,7 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
+    "module": "esnext",
     "resolveJsonModule": true
   },
   "exclude": ["dist", "esm", "build", "node_modules"]

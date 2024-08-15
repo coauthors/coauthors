@@ -18,7 +18,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const privateKey = fs.readFileSync(path.join(__dirname, 'fixtures/mock-cert.pem'), 'utf-8')
 
-const payload = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/issues.opened.json'), 'utf-8'))
+const payload = JSON.parse(fs.readFileSync(path.join(__dirname, './test/fixtures/issues.opened.json'), 'utf-8'))
 
 // TODO: Do this test
 describe.skip('My Probot app', () => {
