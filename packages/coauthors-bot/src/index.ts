@@ -1,8 +1,6 @@
 import { markdownTable } from 'markdown-table'
 import type { Probot } from 'probot'
 
-const truncate = (str: string, num: number): string => (str.length > num ? str.slice(0, num) + '...' : str)
-
 export default (app: Probot) => {
   app.on(
     ['pull_request.opened', 'pull_request.synchronize', 'pull_request_review', 'issue_comment'],
@@ -38,51 +36,61 @@ export default (app: Probot) => {
           ...prReviews.map((comment) => ({ type: 'review', comment }) as const),
         ].filter(({ comment }) => comment.user?.login.endsWith('[bot]') === false)
 
-        const tableBody = Object.entries(
-          userComments.reduce<Record<string, typeof userComments>>(
-            (acc, cur) =>
-              cur.comment.user == null
-                ? acc
-                : { ...acc, [cur.comment.user.login]: [...(acc[cur.comment.user.login] ?? []), cur] },
-            {}
-          )
-        ).map(
-          ([username, comments]) =>
-            [
-              `@${username}`,
-              comments
-                .map(
-                  ({ type, comment }) =>
-                    `[${comment.body ? `${truncate(comment.body, 30)}(${type})` : 'this comment'}](${comment.html_url})`
-                )
-                .join(', '),
-              `${comments.length}`,
-              `[Click here to add this person as co-author](https://coauthors.me/generator?username=${username})`,
-            ] as const
-        )
+        const commentBody = `### People can be co-author:
 
-        const table = markdownTable([['Candidate', 'Reasons', 'Count', 'Action'], ...tableBody], { padding: false })
+${markdownTable(
+  [
+    ['Candidate', 'Reasons', 'Count', 'Add this as commit message'],
+    ...Object.entries(
+      // Group comments by user
+      userComments.reduce<
+        Record<
+          string,
+          { comments: typeof userComments; user: Exclude<(typeof userComments)[number]['comment']['user'], null> }
+        >
+      >(
+        (acc, cur) =>
+          cur.comment.user == null
+            ? acc
+            : {
+                ...acc,
+                [cur.comment.user.login]: {
+                  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+                  comments: [...(acc[cur.comment.user.login]?.comments ?? []), cur],
+                  user: cur.comment.user,
+                },
+              },
+        {}
+      )
+    ).map(
+      ([username, { comments, user }]) =>
+        [
+          // Candidate: mention the user
+          `@${username}`,
+          // Reasons: list the reasons for co-authoring
+          comments
+            .sort((a, b) => a.comment.id - b.comment.id)
+            .map(({ comment }) => comment.html_url)
+            .join(' '),
+          // Count: count the number of comments
+          `${comments.length}`,
+          // Action: add a button to add the user as a co-author
+          `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
+        ] as const
+    ),
+  ],
+  { padding: false }
+)}`
 
-        const prComment = {
-          ...repo,
-          issue_number: issueNumber,
-          body: `### People could be co-author:
+        const prComment = { ...repo, issue_number: issueNumber, body: commentBody }
 
-${table}`,
-        }
-
-        if (coauthorsCommentAlready?.id != null) {
-          return context.octokit.issues.updateComment({ ...prComment, comment_id: coauthorsCommentAlready.id })
-        }
-        return context.octokit.issues.createComment(prComment)
+        return coauthorsCommentAlready?.id != null
+          ? context.octokit.issues.updateComment({ ...prComment, comment_id: coauthorsCommentAlready.id })
+          : context.octokit.issues.createComment(prComment)
       } catch (err) {
         console.error(err)
         throw err
       }
     }
   )
-
-  app.onAny((context) => {
-    app.log.info({ event: context.name })
-  })
 }

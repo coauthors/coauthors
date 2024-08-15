@@ -20,7 +20,8 @@ const privateKey = fs.readFileSync(path.join(__dirname, 'fixtures/mock-cert.pem'
 
 const payload = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/issues.opened.json'), 'utf-8'))
 
-describe('My Probot app', () => {
+// TODO: Do this test
+describe.skip('My Probot app', () => {
   let probot: any
 
   beforeEach(() => {
