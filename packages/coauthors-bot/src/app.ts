@@ -1,4 +1,4 @@
-import { markdownTable } from 'markdown-table'
+import markdownTable from 'markdown-table'
 import type { Probot } from 'probot'
 
 export const app = (app: Probot) => {
@@ -62,22 +62,19 @@ export const app = (app: Probot) => {
                 },
           {}
         )
-      ).map(
-        ([username, { comments, user }]) =>
-          [
-            // Candidate: mention the user
-            `@${username}`,
-            // Reasons: list the reasons for co-authoring
-            comments
-              .sort((a, b) => a.comment.id - b.comment.id)
-              .map(({ comment }) => comment.html_url)
-              .join(' '),
-            // Count: count the number of comments
-            `${comments.length}`,
-            // Action: add a button to add the user as a co-author
-            `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
-          ] as const
-      ),
+      ).map(([username, { comments, user }]) => [
+        // Candidate: mention the user
+        `@${username}`,
+        // Reasons: list the reasons for co-authoring
+        comments
+          .sort((a, b) => a.comment.id - b.comment.id)
+          .map(({ comment }) => comment.html_url)
+          .join(' '),
+        // Count: count the number of comments
+        `${comments.length}`,
+        // Action: add a button to add the user as a co-author
+        `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
+      ]),
     ],
     { padding: false }
   )}`

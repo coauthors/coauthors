@@ -259,8 +259,8 @@ importers:
   packages/coauthors-bot:
     dependencies:
       markdown-table:
-        specifier: ^3.0.3
-        version: 3.0.3
+        specifier: ^2.0.0
+        version: 2.0.0
       probot:
         specifier: ^13.0.1
         version: 13.3.6
@@ -274,6 +274,9 @@ importers:
       '@coauthors/tsup':
         specifier: workspace:*
         version: link:../../configs/tsup
+      '@types/markdown-table':
+        specifier: ^2.0.0
+        version: 2.0.0
       nock:
         specifier: ^14.0.0-beta.5
         version: 14.0.0-beta.8
@@ -3346,6 +3349,10 @@ packages:
 
   /@types/lodash@4.17.1:
     resolution: {integrity: sha512-X+2qazGS3jxLAIz5JDXDzglAF3KpijdhFxlf/V1+hEsOUc+HnWi81L/uv/EvGuV90WY+7mPGFCUDGfQC3Gj95Q==}
+    dev: true
+
+  /@types/markdown-table@2.0.0:
+    resolution: {integrity: sha512-fVZN/DRjZvjuk+lo7ovlI/ZycS51gpYU5vw5EcFeqkcX6lucQ+UWgEOH2O4KJHkSck4DHAY7D7CkVLD0wzc5qw==}
     dev: true
 
   /@types/mdast@3.0.15:
@@ -7991,6 +7998,12 @@ packages:
       mdurl: 1.0.1
       uc.micro: 1.0.6
     dev: true
+
+  /markdown-table@2.0.0:
+    resolution: {integrity: sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==}
+    dependencies:
+      repeat-string: 1.6.1
+    dev: false
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
