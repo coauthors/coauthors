@@ -161,11 +161,11 @@ importers:
         specifier: ^14.2.3
         version: 14.2.3(next@14.2.3)(react@18.3.1)
       '@suspensive/react':
-        specifier: 2.0.0-beta.9
-        version: 2.0.0-beta.9(react@18.3.1)
+        specifier: 2.13.1
+        version: 2.13.1(react@18.3.1)
       '@suspensive/react-query':
-        specifier: 2.0.0-beta.9
-        version: 2.0.0-beta.9(@suspensive/react@2.0.0-beta.9)(@tanstack/react-query@4.36.1)(react@18.3.1)
+        specifier: 2.13.1
+        version: 2.13.1(@suspensive/react@2.13.1)(@tanstack/react-query@4.36.1)(react@18.3.1)
       '@tanstack/react-query':
         specifier: ^4.36.1
         version: 4.36.1(react-dom@18.3.1)(react@18.3.1)
@@ -891,7 +891,6 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
     requiresBuild: true
-    dev: true
     optional: true
 
   /@commander-js/extra-typings@12.0.1(commander@12.0.0):
@@ -900,6 +899,14 @@ packages:
       commander: ~12.0.0
     dependencies:
       commander: 12.0.0
+    dev: false
+
+  /@commander-js/extra-typings@12.1.0(commander@12.1.0):
+    resolution: {integrity: sha512-wf/lwQvWAA0goIghcb91dQYpkLBcyhOhQNqG/VgWhnKzgt+UOMvra7EX/2fv70arm5RW+PUHoQHHDa6/p77Eqg==}
+    peerDependencies:
+      commander: ~12.1.0
+    dependencies:
+      commander: 12.1.0
     dev: false
 
   /@cspell/cspell-bundled-dicts@8.8.1:
@@ -3108,23 +3115,72 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /@suspensive/react-query@2.0.0-beta.9(@suspensive/react@2.0.0-beta.9)(@tanstack/react-query@4.36.1)(react@18.3.1):
-    resolution: {integrity: sha512-fd8ulzypHnL+teNlkSKA3BE4ABpQB+aSuQPOkaKBesxsF8my9YQ3tDg98tlzOIfEfvao5MWFmtQ9IYV1ExGFOA==}
+  /@suspensive/react-query-4@2.13.1(@suspensive/react@2.13.1)(@tanstack/react-query@4.36.1)(react@18.3.1):
+    resolution: {integrity: sha512-Oyu1bXzGwjwPYO4GDR43lC1ny2qxy/Nty+77slHDN5Kxlw8umykdg5G+d89uCnuHDhNJELZjI63A9HLjlz16/A==}
     peerDependencies:
-      '@suspensive/react': ^2.0.0-beta.9
+      '@suspensive/react': ^2.13.1
       '@tanstack/react-query': ^4
       react: ^18
     peerDependenciesMeta:
       '@suspensive/react':
         optional: true
     dependencies:
-      '@suspensive/react': 2.0.0-beta.9(react@18.3.1)
+      '@suspensive/react': 2.13.1(react@18.3.1)
+      '@suspensive/utils': 2.13.1(react@18.3.1)
       '@tanstack/react-query': 4.36.1(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
     dev: false
 
-  /@suspensive/react@2.0.0-beta.9(react@18.3.1):
-    resolution: {integrity: sha512-5B4X9KVfbxjs6Fdw1gchcRaDpnyGOf1e1odftG45UYasnNHNKiQOLBCEmFQpYmQh3DisPYJM4J91JtJo1CD+8g==}
+  /@suspensive/react-query-5@2.13.1(@suspensive/react@2.13.1)(@tanstack/react-query@4.36.1)(react@18.3.1):
+    resolution: {integrity: sha512-pubCbjq8nMVgyzcRSRMXbd8zpa6RyypIt5/D8zZReH4L5oDCQPWSpyYNw0+u3ld4qZ1cLd0hdhL3wxSiueLhHg==}
+    peerDependencies:
+      '@suspensive/react': ^2.13.1
+      '@tanstack/react-query': ^5
+      react: ^18
+    peerDependenciesMeta:
+      '@suspensive/react':
+        optional: true
+    dependencies:
+      '@suspensive/react': 2.13.1(react@18.3.1)
+      '@suspensive/utils': 2.13.1(react@18.3.1)
+      '@tanstack/react-query': 4.36.1(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+    dev: false
+
+  /@suspensive/react-query@2.13.1(@suspensive/react@2.13.1)(@tanstack/react-query@4.36.1)(react@18.3.1):
+    resolution: {integrity: sha512-dh+knDent8T0MAM1zn7sXx79JegjQ1O5rqyMKcYTdLs2jRErOiFfXPv7h8xCJCfSIaQF+ANImisWu7XnyaQxFQ==}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@suspensive/react': ^2.13.1
+      '@tanstack/react-query': ^4 || ^5
+      react: ^18
+    peerDependenciesMeta:
+      '@suspensive/react':
+        optional: true
+    dependencies:
+      '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
+      '@suspensive/react': 2.13.1(react@18.3.1)
+      '@suspensive/react-query-4': 2.13.1(@suspensive/react@2.13.1)(@tanstack/react-query@4.36.1)(react@18.3.1)
+      '@suspensive/react-query-5': 2.13.1(@suspensive/react@2.13.1)(@tanstack/react-query@4.36.1)(react@18.3.1)
+      '@suspensive/utils': 2.13.1(react@18.3.1)
+      '@tanstack/react-query': 4.36.1(react-dom@18.3.1)(react@18.3.1)
+      cli-table3: 0.6.5
+      commander: 12.1.0
+      react: 18.3.1
+    dev: false
+
+  /@suspensive/react@2.13.1(react@18.3.1):
+    resolution: {integrity: sha512-FaktxvCxaY1Ic3Xwv37qQvsHCbmluwHNjukzUN1fDWSletHbxDcA2gD6v5K9BzLZcbpnA0iB3EFOQDPiqQ4U4Q==}
+    peerDependencies:
+      react: ^18
+    dependencies:
+      '@suspensive/utils': 2.13.1(react@18.3.1)
+      react: 18.3.1
+    dev: false
+
+  /@suspensive/utils@2.13.1(react@18.3.1):
+    resolution: {integrity: sha512-yEheCnE4yr7ZsTS/5rFCXCrp0IxcngRV373xV3MWeZlGhzsRYRxCBMNbxQ7hoRiZOS9s/THt7vBGGIFLKb1PEg==}
     peerDependencies:
       react: ^18
     dependencies:
@@ -4489,6 +4545,15 @@ packages:
       '@colors/colors': 1.5.0
     dev: true
 
+  /cli-table3@0.6.5:
+    resolution: {integrity: sha512-+W/5efTR7y5HRD7gACw9yQjqMVvEMLBHmboM/kPWam+H+Hmyrgjh6YncVKK122YZkXrLudzTuAukUw9FnMf7IQ==}
+    engines: {node: 10.* || >= 12.*}
+    dependencies:
+      string-width: 4.2.3
+    optionalDependencies:
+      '@colors/colors': 1.5.0
+    dev: false
+
   /cli-truncate@4.0.0:
     resolution: {integrity: sha512-nPdaFdQ0h/GEigbPClz11D0v/ZJEwxmeVZGeMo3Z5StPtUTkA9o1lD6QwoirYiSDzbcwn2XcjwmCp68W1IS4TA==}
     engines: {node: '>=18'}
@@ -4625,6 +4690,11 @@ packages:
   /commander@12.0.0:
     resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
     engines: {node: '>=18'}
+
+  /commander@12.1.0:
+    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+    engines: {node: '>=18'}
+    dev: false
 
   /commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -5486,7 +5556,6 @@ packages:
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
-    dev: true
 
   /emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
@@ -7227,7 +7296,6 @@ packages:
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
-    dev: true
 
   /is-fullwidth-code-point@4.0.0:
     resolution: {integrity: sha512-O4L094N2/dZ7xqVdrXhh9r1KODPJpFms8B5sGdJLPy664AgvXsreZUyCQQNItZRDlYug4xStLjNp/sz3HvBowQ==}
@@ -10913,7 +10981,6 @@ packages:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.1
-    dev: true
 
   /string-width@5.1.2:
     resolution: {integrity: sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==}
