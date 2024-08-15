@@ -1,7 +1,7 @@
 import { markdownTable } from 'markdown-table'
 import type { Probot } from 'probot'
 
-export const app = (app: Probot) => {
+export default function app(app: Probot) {
   app.on(
     ['pull_request.opened', 'pull_request.synchronize', 'pull_request_review', 'issue_comment'],
     async (context) => {
@@ -37,50 +37,50 @@ export const app = (app: Probot) => {
         ].filter(({ comment }) => comment.user?.login.endsWith('[bot]') === false)
 
         const commentBody = `### People can be co-author:
-  
-  ${markdownTable(
-    [
-      ['Candidate', 'Reasons', 'Count', 'Add this as commit message'],
-      ...Object.entries(
-        // Group comments by user
-        userComments.reduce<
-          Record<
-            string,
-            { comments: typeof userComments; user: Exclude<(typeof userComments)[number]['comment']['user'], null> }
-          >
-        >(
-          (acc, cur) =>
-            cur.comment.user == null
-              ? acc
-              : {
-                  ...acc,
-                  [cur.comment.user.login]: {
-                    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-                    comments: [...(acc[cur.comment.user.login]?.comments ?? []), cur],
-                    user: cur.comment.user,
-                  },
+
+${markdownTable(
+  [
+    ['Candidate', 'Reasons', 'Count', 'Add this as commit message'],
+    ...Object.entries(
+      // Group comments by user
+      userComments.reduce<
+        Record<
+          string,
+          { comments: typeof userComments; user: Exclude<(typeof userComments)[number]['comment']['user'], null> }
+        >
+      >(
+        (acc, cur) =>
+          cur.comment.user == null
+            ? acc
+            : {
+                ...acc,
+                [cur.comment.user.login]: {
+                  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+                  comments: [...(acc[cur.comment.user.login]?.comments ?? []), cur],
+                  user: cur.comment.user,
                 },
-          {}
-        )
-      ).map(
-        ([username, { comments, user }]) =>
-          [
-            // Candidate: mention the user
-            `@${username}`,
-            // Reasons: list the reasons for co-authoring
-            comments
-              .sort((a, b) => a.comment.id - b.comment.id)
-              .map(({ comment }) => comment.html_url)
-              .join(' '),
-            // Count: count the number of comments
-            `${comments.length}`,
-            // Action: add a button to add the user as a co-author
-            `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
-          ] as const
-      ),
-    ],
-    { padding: false }
-  )}`
+              },
+        {}
+      )
+    ).map(
+      ([username, { comments, user }]) =>
+        [
+          // Candidate: mention the user
+          `@${username}`,
+          // Reasons: list the reasons for co-authoring
+          comments
+            .sort((a, b) => a.comment.id - b.comment.id)
+            .map(({ comment }) => comment.html_url)
+            .join(' '),
+          // Count: count the number of comments
+          `${comments.length}`,
+          // Action: add a button to add the user as a co-author
+          `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
+        ] as const
+    ),
+  ],
+  { padding: false }
+)}`
 
         const prComment = { ...repo, issue_number: issueNumber, body: commentBody }
 

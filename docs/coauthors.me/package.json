@@ -5,7 +5,8 @@
   "description": "Coauthors Official Websites",
   "keywords": [
     "coauthors",
-    "coauthors-vscode"
+    "coauthors-vscode",
+    "coauthors-bot"
   ],
   "author": {
     "name": "Jonghyeon Ko",
@@ -13,9 +14,13 @@
   },
   "type": "commonjs",
   "scripts": {
+    "bot:build": "tsup",
+    "bot:dev": "nodemon",
+    "bot:start": "probot run ./dist/index.mjs",
     "build": "next build",
     "ci:type": "tsc --noEmit",
     "dev": "next dev -p 4000",
+    "prepack": "pnpm bot:build",
     "start": "next start -p 4000"
   },
   "dependencies": {
@@ -28,9 +33,11 @@
     "@tanstack/react-query-devtools": "^4.36.1",
     "axios": "^1.6.8",
     "coauthors-bot": "workspace:*",
+    "markdown-table": "^3.0.3",
     "next": "^14.2.3",
     "nextra": "^2.13.4",
     "nextra-theme-docs": "^2.13.4",
+    "probot": "^13.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.2",
@@ -41,12 +48,16 @@
   "devDependencies": {
     "@coauthors/eslint-config": "workspace:*",
     "@coauthors/tsconfig": "workspace:*",
+    "@coauthors/tsup": "workspace:*",
     "@hookform/devtools": "^4.3.1",
     "@next/eslint-plugin-next": "^14.2.3",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "autoprefixer": "^10.4.19",
+    "nock": "^14.0.0-beta.5",
+    "nodemon": "^3.1.4",
     "postcss": "^8.4.38",
+    "smee-client": "^2.0.0",
     "tailwindcss": "^3.4.3"
   }
 }
