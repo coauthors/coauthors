@@ -2,9 +2,10 @@ import { describe, expect, test } from 'vitest'
 import { convert } from './convert'
 
 /* eslint-disable vitest/valid-title, vitest/no-identical-title */
-
-// To prevent the error: "Error: Failed to fetch user: rate limit exceeded"
-;(process.env.CI === 'true' ? describe.skip : describe)('convert', () => {
+;(process.env.CI === 'true'
+  ? // To prevent the error: "Error: Failed to fetch user: rate limit exceeded"
+    describe.skip
+  : describe)('convert', () => {
   test('', async ({ task }) => {
     expect(await convert(task.name)).toStrictEqual({
       result: task.name,
