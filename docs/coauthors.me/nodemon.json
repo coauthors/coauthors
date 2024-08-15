@@ -1,0 +1,6 @@
+{
+  "watch": ["src/bot"],
+  "ext": "ts",
+  "ignore": ["dist"],
+  "exec": "pnpm bot:build && pnpm bot:start"
+}
