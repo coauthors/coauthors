@@ -21,7 +21,7 @@
     "email": "manudeli.ko@gmail.com"
   },
   "sideEffects": false,
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
