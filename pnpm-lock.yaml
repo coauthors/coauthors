@@ -178,6 +178,9 @@ importers:
       coauthors-bot:
         specifier: workspace:*
         version: link:../../packages/coauthors-bot
+      markdown-table:
+        specifier: ^3.0.3
+        version: 3.0.3
       next:
         specifier: ^14.2.3
         version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1)
@@ -187,6 +190,9 @@ importers:
       nextra-theme-docs:
         specifier: ^2.13.4
         version: 2.13.4(next@14.2.3)(nextra@2.13.4)(react-dom@18.3.1)(react@18.3.1)
+      probot:
+        specifier: ^13.0.1
+        version: 13.3.6
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -212,6 +218,9 @@ importers:
       '@coauthors/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
+      '@coauthors/tsup':
+        specifier: workspace:*
+        version: link:../../configs/tsup
       '@hookform/devtools':
         specifier: ^4.3.1
         version: 4.3.1(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
@@ -227,9 +236,18 @@ importers:
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
+      nock:
+        specifier: ^14.0.0-beta.5
+        version: 14.0.0-beta.8
+      nodemon:
+        specifier: ^3.1.4
+        version: 3.1.4
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
+      smee-client:
+        specifier: ^2.0.0
+        version: 2.0.1
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3

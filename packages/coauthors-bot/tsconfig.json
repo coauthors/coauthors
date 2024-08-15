@@ -1,7 +1,0 @@
-{
-  "extends": "@coauthors/tsconfig/base.json",
-  "include": [".", "./.eslintrc.cjs"],
-  "compilerOptions": {
-    "types": ["vitest/globals"]
-  }
-}
