@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts",
   "ignore": ["dist"],
-  "exec": "tsc && pnpm start"
+  "exec": "pnpm build && pnpm start"
 }

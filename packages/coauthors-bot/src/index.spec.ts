@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url'
 import nock from 'nock'
 import { Probot, ProbotOctokit } from 'probot'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
-import myProbotApp from '../../src/index.js'
+import myProbotApp from '.'
 
 const issueCreatedBody = { body: 'Thanks for opening this issue!' }
 
