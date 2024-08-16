@@ -57,48 +57,52 @@ export const app = (app: Probot) => {
             ({ comment }) => comment.user?.login.endsWith('[bot]') === false
           )
 
+          const tableRows = Object.entries(
+            // Group comments by user
+            userComments.reduce<
+              Record<
+                string,
+                {
+                  comments: typeof userComments
+                  user: Exclude<(typeof userComments)[number]['comment']['user'], null>
+                }
+              >
+            >(
+              (acc, cur) =>
+                cur.comment.user == null
+                  ? acc
+                  : {
+                      ...acc,
+                      [cur.comment.user.login]: {
+                        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+                        comments: [...(acc[cur.comment.user.login]?.comments ?? []), cur],
+                        user: cur.comment.user,
+                      },
+                    },
+              {}
+            )
+          )
+            .map(([username, { comments, user }]) => [
+              // Candidate: mention the user
+              `@${username}`,
+              // Reasons: list the reasons for co-authoring
+              comments
+                .sort((a, b) => a.comment.id - b.comment.id)
+                .map(({ comment }) => comment.html_url)
+                .join(' '),
+              // Count: count the number of comments
+              `${comments.length}`,
+              // Action: add a button to add the user as a co-author
+              `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
+            ])
+            .sort((a, b) => Number(b[2]) - Number(a[2]))
+
           const commentBody = `### People can be co-author:
 
 ${markdownTable(
   [
     ['Candidate', 'Reasons', 'Count', 'Add this as commit message'],
-    ...Object.entries(
-      // Group comments by user
-      userComments.reduce<
-        Record<
-          string,
-          {
-            comments: typeof userComments
-            user: Exclude<(typeof userComments)[number]['comment']['user'], null>
-          }
-        >
-      >(
-        (acc, cur) =>
-          cur.comment.user == null
-            ? acc
-            : {
-                ...acc,
-                [cur.comment.user.login]: {
-                  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-                  comments: [...(acc[cur.comment.user.login]?.comments ?? []), cur],
-                  user: cur.comment.user,
-                },
-              },
-        {}
-      )
-    ).map(([username, { comments, user }]) => [
-      // Candidate: mention the user
-      `@${username}`,
-      // Reasons: list the reasons for co-authoring
-      comments
-        .sort((a, b) => a.comment.id - b.comment.id)
-        .map(({ comment }) => comment.html_url)
-        .join(' '),
-      // Count: count the number of comments
-      `${comments.length}`,
-      // Action: add a button to add the user as a co-author
-      `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
-    ]),
+    ...(tableRows.length > 0 ? tableRows : [['No candidate', '', '', '']]),
   ],
   { padding: false }
 )}`
@@ -142,19 +146,21 @@ ${markdownTable(
                     },
               {}
             )
-          ).map(([username, { comments, user }]) => [
-            // Candidate: mention the user
-            `@${username}`,
-            // Reasons: list the reasons for co-authoring
-            comments
-              .sort((a, b) => a.comment.id - b.comment.id)
-              .map(({ comment }) => comment.html_url)
-              .join(' '),
-            // Count: count the number of comments
-            `${comments.length}`,
-            // Action: add a button to add the user as a co-author
-            `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
-          ])
+          )
+            .map(([username, { comments, user }]) => [
+              // Candidate: mention the user
+              `@${username}`,
+              // Reasons: list the reasons for co-authoring
+              comments
+                .sort((a, b) => a.comment.id - b.comment.id)
+                .map(({ comment }) => comment.html_url)
+                .join(' '),
+              // Count: count the number of comments
+              `${comments.length}`,
+              // Action: add a button to add the user as a co-author
+              `\`Co-authored-by: ${user.name ?? user.login} <${user.id}+${user.login}@users.noreply.github.com>\``,
+            ])
+            .sort((a, b) => Number(b[2]) - Number(a[2]))
 
           const commentBody = `### People can be co-author:
 
