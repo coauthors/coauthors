@@ -11,6 +11,7 @@ body:
       multiple: true
       options:
         - "coauthors"
+        - "coauthors-bot"
         - "coauthors-vscode"
         - "@coauthors/core"
         - etc
