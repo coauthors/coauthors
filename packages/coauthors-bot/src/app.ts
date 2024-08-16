@@ -29,7 +29,10 @@ export const app = (app: Probot) => {
         ).flatMap((comments) => comments.data)
 
         const comments = (await context.octokit.issues.listComments({ ...repo, issue_number: issueNumber })).data
-        const coauthorsCommentAlready = comments.find((comment) => comment.user?.login === 'coauthors[bot]') ?? null
+        const coauthorsCommentAlready =
+          comments.find((comment) =>
+            comment.user ? ['coauthors[bot]', 'coauthors-dev[bot]'].includes(comment.user.login) : false
+          ) ?? null
         const userComments = [
           ...comments.map((comment) => ({ type: 'comment', comment }) as const),
           ...commentsForReview.map((comment) => ({ type: 'comment for review', comment }) as const),
