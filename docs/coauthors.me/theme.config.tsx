@@ -16,13 +16,14 @@ const config: DocsThemeConfig = {
   },
   head: function Head() {
     const { title, frontMatter } = useConfig()
-    const { asPath } = useRouter()
+    const { asPath, defaultLocale, locale } = useRouter()
+    const url = 'https://coauthors.me' + (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
 
     return (
       <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={title || 'Coauthors'} />
-        <meta property="og:url" content={`https://coauthors.me${asPath}`} />
+        <meta property="og:url" content={url} />
         <meta property="og:description" content={frontMatter.description || 'Make us as Co-author easily'} />
         <meta property="og:image" content="/banner.png" />
         <link rel="icon" href="/img/favicon.ico" type="image/ico" />
@@ -45,7 +46,15 @@ const config: DocsThemeConfig = {
     content: '',
   },
   editLink: {
-    text: 'Edit this page →',
+    text: function Text() {
+      const router = useRouter()
+
+      if (router.pathname.includes('.ko')) {
+        return <>이 페이지를 수정하기 →</>
+      }
+
+      return <>Edit this page →</>
+    },
   },
   sidebar: {
     titleComponent({ title }) {
@@ -54,8 +63,20 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 4,
     toggleButton: true,
   },
+  i18n: [
+    { locale: 'en', text: 'English' },
+    { locale: 'ko', text: '한국어' },
+  ],
   search: {
-    placeholder: 'Search documentation...',
+    placeholder: function Placeholder() {
+      const router = useRouter()
+
+      if (router.pathname.includes('.ko')) {
+        return '검색어를 입력하세요...'
+      }
+
+      return 'Search documentation...'
+    },
   },
   footer: {
     text: '2024 © Coauthors authors.',

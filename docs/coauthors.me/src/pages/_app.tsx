@@ -1,6 +1,6 @@
 import '../styles/globals.css'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import Script from 'next/script'
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
       <GoogleTagManager gtmId="GTM-T45BRP55" />
       <GoogleAnalytics gaId="G-ZX9ZN6Y7V3" />
       <Script id="microsoft-clarity" type="text/javascript">
-      {`
+        {`
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -18,6 +18,5 @@ export default function App({ Component, pageProps }) {
       `}
       </Script>
     </>
-
-)
+  )
 }

@@ -1,0 +1,35 @@
+import { CoauthorsGenerator, Callout } from '@/components'
+import { Steps } from 'nextra/components'
+
+# Coauthors 제네레이터
+
+Coauthors 제네레이터는 웹에서 사용할 수 있으므로 누구나 액세스하여 공동저자추가 문법에 맞는 문자열을 쉽게 얻을 수 있습니다. 다른 솔루션을 사용할 수 없거나 웹을 선호하는 사람들을 위해 제공됩니다.
+
+<br />
+
+<CoauthorsGenerator />
+
+<Callout type='info'>
+GitHub에서 [공동저자로 추가하기](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-co-authored-commits-on-the-command-line).
+
+커밋을 도와준 사람들의 노고를 인정하는 좋은 방법입니다.
+
+```shell
+$ git commit -m "Refactor usability tests.
+>
+>
+Co-authored-by: NAME <NAME@EXAMPLE.COM>
+Co-authored-by: ANOTHER-NAME <ANOTHER-NAME@EXAMPLE.COM>"
+```
+
+</Callout>
+
+## 사용방법
+
+<Steps>
+
+### GitHub 사용자 이름만 입력하세요! 그게 전부입니다 🎉
+
+![Example](/img/generator-example.gif)
+
+</Steps>

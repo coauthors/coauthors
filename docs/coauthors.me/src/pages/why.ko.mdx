@@ -1,0 +1,95 @@
+import { Steps } from 'nextra/components'
+import { Callout } from '../components'
+import Image from 'next/image'
+
+# 아이디어 공유가 더 쉬워져요 🌴
+
+<div class="py-4 pt-8 text-xl">
+  "우리는 매일 수많은 커밋을 남깁니다. 이 커밋들 중에는{' '}
+  <b>동료들이 나에게 준 아이디어를 바탕으로 만들어진 커밋이 많습니다.</b> 사실, 좋은 아이디어는 코드가 아니라 많은
+  사람들과의 토론을 통해 코드로 작성되고 커밋됩니다."
+</div>
+
+### 아이디어 제공자는 `Co-authoring(공동저자추가)`로 동기부여 받을 수 있습니다.
+
+GitHub에서 아이디어 제공자를 커밋의 공동 저자로 추가하는 방법이 있습니다. 공동 저자로 추가하는 것은 아이디어 제공자에게 동기를 부여할 수 있습니다. 최소한 기분을 좋게 만들어줍니다.
+
+<Callout type='info'>
+
+[GitHub | 여러 작성자가 있는 커밋 만들기](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors)
+
+![Example](/img/coauthor-example.png)
+
+</Callout>
+
+## 🥲 문제: `Co-authoring(공동저자추가)`의 어려움
+
+하지만 커밋 메시지에서 아이디어 제공자를 공동 작성자로 만드는 것은 매우 어렵습니다.
+
+<Steps>
+
+### 너무 복잡한 문법 📚
+
+```shell /Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>/ /Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>/
+git commit -m "feat: add some feature
+
+Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>"
+```
+
+GitHub에서 제공하는 문법을 정확히 알아야 합니다. 간격, 텍스트 순서, 대문자 등을 정확하게 작성해야 합니다.
+
+### 공개 이메일을 찾는 데 실패할 가능성이 높습니다. 📧
+
+이메일은 다른 사람의 GitHub 계정에 등록되어 있어야 합니다. 또한, 다른 사람의 GitHub 프로필에 이메일이 공개적으로 노출되어 있지 않을 가능성이 높습니다.
+
+### 어려운 숫자로 된 GitHub ID가 필요합니다 🤖
+
+```text /61593290/ /manudeli/
+61593290+manudeli@users.noreply.github.com
+```
+
+이메일이 아래 형식을 따르도록 하려면 사용자 이름과 공동 작성자의 GitHub 계정의 숫자 ID를 알아야 합니다.
+
+</Steps>
+
+## Coauthors: 간단합니다! 🎉
+
+우리는 아이디어 제공자를 커밋 메시지에 공동 작성자로 추가하는 것을 더 쉽게 만드는 4가지 방법을 제공합니다.
+
+<Steps>
+
+### Coauthors GitHub 앱 👥
+
+Coauthors GitHub 앱은 공동 저자 추가 문법과 일치하는 문자열을 자동으로 제공하므로 기여자는 아이디어 제공자가 댓글만 남겼더라도 커밋에 공동 작성자로 쉽게 추가할 수 있습니다. 이는 GitHub Issues 및 Pull Requests에서 작동합니다. [GitHub 앱 마켓플레이스 →](https://github.com/apps/coauthors)
+![Example](/img/github-app-example.png)
+
+### Coauthors 제네레이터 🌐
+
+GitHub 사용자 이름을 입력하고 커밋 메시지를 만들 수 있는 간단한 웹 페이지를 제공합니다. 입력된 GitHub 사용자 이름을 통해 공동 작성에 필요한 모든 정보를 자동으로 검색하고 커밋 메시지를 만듭니다. [바로가기 →](/generator)
+
+![Example](/img/generator-example.gif)
+
+### Coauthors VSCode 익스텐션 💻
+
+GitHub 사용자 이름을 입력하고 커밋 메시지를 생성할 수 있는 간단한 VSCode 확장 기능을 제공합니다. [VSCode 마켓플레이스 →](https://marketplace.visualstudio.com/items?itemName=coauthors.coauthors-vscode)
+
+![Example](/img/vscode-example.gif)
+
+### Coauthors + Git hook (husky) ⚡
+
+저희 툴은 입력된 GitHub 사용자 이름을 통해 공동 작성에 필요한 모든 정보를 자동으로 검색하고 커밋 메시지를 생성합니다. [설정 →](/git-hook)
+
+```shell /coauthors: manudeli, 2-NOW/
+git commit -m "Refactor usability tests.
+
+coauthors: manudeli, 2-NOW" // Commit message will be converted automatically
+```
+
+</Steps>
+
+## Coauthors를 사용하면 아이디어 제공자를 쉽게 공동저자(Co-Author)로 만들 수 있습니다!
+
+설정은 매우 간단합니다. 이러한 유형의 Co-Authoring은 `GitHub 앱` 또는 `npx coauthors` 또는 `Generator` 사이트 또는 `VSCode 확장 프로그램`과 같이 매우 간단한 것을 추가하기만 하면 가능합니다.
+
+더 쉬운 Co-Authoring으로 더 나은 아이디어를 실현하세요

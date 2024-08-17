@@ -1,0 +1,37 @@
+import { Steps } from 'nextra/components'
+
+# 커밋 메시지의 공동저자
+
+커밋 단계에서 git hook을 활용하여 공동저자를 쉽게 추가할 수도 있습니다. 공동저자추가를 위한 기존 문법과 달리, 단순히 `coauthors: username`을 사용하면 prepare-commit-msg hook이 기존 구문으로 변환합니다.
+
+## 사용 방법
+
+<Steps>
+
+### 아래 스크립트를 .husky/prepare-commit-msg에 복사하여 붙여넣기
+
+```shell filename=".husky/prepare-commit-msg"
+npx coauthors
+```
+
+### 그냥 커밋하세요. 그게 전부입니다 🎉
+
+커밋 메시지 끝에 공동 작성자의 GitHub 사용자 이름을 추가합니다.
+like `coauthors: <공동 저자>, <공동 저자>...`
+
+```shell /coauthors: manudeli, 2-NOW(Whale)/
+git commit -m "feat: add some feature
+
+coauthors: manudeli, 2-NOW(Whale)"
+```
+
+이 git hook은 아래와 같이 커밋 메시지를 자동으로 변환합니다.
+
+```ansi /Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>/ /Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>/
+feat: add some feature
+
+Co-authored-by: Jonghyeon Ko <61593290+manudeli@users.noreply.github.com>
+Co-authored-by: Whale <71202076+2-NOW@users.noreply.github.com>
+```
+
+</Steps>

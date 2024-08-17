@@ -1,0 +1,25 @@
+{
+  "docs": {
+    "type": "page",
+    "title": "문서보기",
+    "href": "/why"
+  },
+  "generator-link": {
+    "type": "page",
+    "title": "제네레이터",
+    "href": "/generator"
+  },
+  "why": "왜 Coauthors가 필요할까요?",
+  "--- How to use": {
+    "type": "separator",
+    "title": "사용법"
+  },
+  "github-app": "GitHub 앱",
+  "generator": "제네레이터",
+  "vscode": "VSCode 익스텐션",
+  "git-hook": "Husky를 통한 Git Hook",
+  "---": {
+    "type": "separator"
+  },
+  "changelogs": "Changelogs"
+}
