@@ -57,7 +57,7 @@ export const CoauthorsGenerator = () => {
               className="h-10 w-full rounded-l-lg bg-[#f9fafb1a] px-4 py-2"
               id="user"
               type="text"
-              placeholder="GitHub Username"
+              placeholder="Enter GitHub username"
               {...register('user')}
               required
             />

@@ -2,9 +2,15 @@ import { Steps } from 'nextra/components'
 
 # Coauthors in commit message
 
+You can also use coauthors by utilizing git hooks at the commit stage. Unlike the existing syntax for co-authors, if you simply use `coauthors: username`, the prepare-commit-msg hook will convert it to the existing syntax.
+
+## How to use
+
+It's really easy to set up and use the coauthors git hook.
+
 <Steps>
 
-### Copy & Paste
+### Copy & Paste below script into .husky/prepare-commit-msg
 
 ```shell filename=".husky/prepare-commit-msg"
 npx coauthors

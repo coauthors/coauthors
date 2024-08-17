@@ -53,13 +53,35 @@ If you want the email to follow the format below, you need to know username and 
 
    </Steps>
 
-## Coauthors: GitHub username only! 🎉
+## Coauthors: Simple! 🎉
 
-We provide 3 ways to make it easier to add idea givers as Co-Author in commit message.
+We provide 4 ways to make it easier to add idea givers as Co-Author in commit message.
 
 <Steps>
 
+### Coauthors GitHub App 👥
+
+The Coauthors GitHub App automatically provides a string that matches the co-authoring syntax so that contributors can easily add them as co-authors on their own commits, even if they only left comments. This works in GitHub Issues and Pull Requests. [Setup →](/github-app)
+
+![Example](/img/github-app-example.png)
+
+### Coauthors Generator 🌐
+
+We provide a simple web page that allows you to enter a GitHub username and create a commit message.
+
+Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message. [Coauthors Generator →](/generator)
+
+![Example](/img/generator-example.gif)
+
+### Coauthors VSCode Extension 💻
+
+We provide a simple VSCode extension that allows you to enter a GitHub username and create a commit message. [VSCode Marketplace →](https://marketplace.visualstudio.com/items?itemName=coauthors.coauthors-vscode)
+
+![Example](/img/vscode-example.gif)
+
 ### Coauthors with Git hook (husky) ⚡
+
+Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message. [Setup →](/git-hook)
 
 ```shell /coauthors: manudeli, 2-NOW/
 git commit -m "Refactor usability tests.
@@ -67,26 +89,10 @@ git commit -m "Refactor usability tests.
 coauthors: manudeli, 2-NOW" // Commit message will be converted automatically
 ```
 
-Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message. [Setup →](/git-hook)
-
-### Coauthors VSCode Extension 💻
-
-![Example](/img/vscode-example.gif)
-
-We provide a simple VSCode extension that allows you to enter a GitHub username and create a commit message. [VSCode Marketplace →](https://marketplace.visualstudio.com/items?itemName=coauthors.coauthors-vscode)
-
-### Coauthors Generator 🌐
-
-![Example](/img/generator-example.gif)
-
-We provide a simple web page that allows you to enter a GitHub username and create a commit message.
-
-Our tool automatically searches all information required for co-authoring through the entered GitHub username and creates a commit message. [Coauthors Generator →](/generator)
-
 </Steps>
 
 ## Make idea giver as Co-Author easily with Coauthors!
 
-Setting up our tool is very simple. This type of Co-Authoring is possible simply by adding a very simple as `npx coauthors` or `Generator` Site or `VSCode Extension`.
+Setting up our tool is very simple. This type of Co-Authoring is possible simply by adding a very simple as `GitHub App` or `npx coauthors` or `Generator` Site or `VSCode Extension`.
 
 Bring better ideas to life with easier Co-Authoring

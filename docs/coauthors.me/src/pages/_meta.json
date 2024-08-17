@@ -14,9 +14,10 @@
     "type": "separator",
     "title": "How to use"
   },
-  "git-hook": "Git Hook with Husky",
+  "github-app": "GitHub App",
   "generator": "Generator",
   "vscode": "VSCode Extension",
+  "git-hook": "Git Hook with Husky",
   "---": {
     "type": "separator"
   },
