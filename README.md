@@ -13,9 +13,13 @@
 
 </div>
 
-## Git Hook with Husky
+## GitHub App
 
-### `coauthors`: Git hook prepare-commit-msg with husky
+[Intall Coauthors GitHub App](https://github.com/apps/coauthors)
+
+![Coauthors GitHub App](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.me/public/img/github-app-example.png)
+
+## Git Hook with Husky
 
 1. Setup with husky
 
@@ -70,7 +74,7 @@
 
 ## Coauthors Generator
 
-[Enter Link (https://coauthors.me)](https://coauthors.me/generator)
+[Enter coauthors.me/generator](https://coauthors.me/generator)
 
 [![Coauthors Generator](https://raw.githubusercontent.com/coauthors/coauthors/main/docs/coauthors.me/public/img/generator-example.gif)](https://coauthors.me/generator)
 
